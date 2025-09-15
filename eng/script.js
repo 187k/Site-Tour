@@ -122,14 +122,14 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Basic validation
             if (!name || !email || !tour) {
-                alert('Пожалуйста, заполните все обязательные поля');
+                alert('Please fill in all required fields');
                 return;
             }
             
             // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
-                alert('Пожалуйста, введите корректный email адрес');
+                alert('Please enter a valid email address');
                 return;
             }
             
@@ -137,12 +137,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
             
-            submitBtn.textContent = 'Отправляется...';
+            submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
             
             // Simulate form submission (replace with actual Google Forms URL)
             setTimeout(() => {
-                alert('Спасибо за вашу заявку! Мы свяжемся с вами в ближайшее время.');
+                alert('Thank you for your request! We will contact you soon.');
                 form.reset();
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
