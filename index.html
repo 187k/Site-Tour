@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-lang">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,17 +18,23 @@
                     <h2>TravelExpert</h2>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#tours" class="nav-link">Tours</a></li>
-                    <li><a href="#reviews" class="nav-link">Reviews</a></li>
-                    <li><a href="#faq" class="nav-link">FAQ</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#home" class="nav-link" data-translate="nav.home">Home</a></li>
+                    <li><a href="#about" class="nav-link" data-translate="nav.about">About</a></li>
+                    <li><a href="#tours" class="nav-link" data-translate="nav.tours">Tours</a></li>
+                    <li><a href="#reviews" class="nav-link" data-translate="nav.reviews">Reviews</a></li>
+                    <li><a href="#faq" class="nav-link" data-translate="nav.faq">FAQ</a></li>
+                    <li><a href="#contact" class="nav-link" data-translate="nav.contact">Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+                <div class="header-right">
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="id">ID</button>
+                    </div>
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -38,11 +44,11 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Discover the beauty of Russia and Central Asia</h1>
-                <p>Professional tours with an experienced guide to the most interesting corners of our planet. From Moscow to Tashkent — your dream journey begins here.</p>
+                <h1 data-translate="hero.title">Discover the beauty of Russia and Central Asia</h1>
+                <p data-translate="hero.description">Professional tours with an experienced guide to the most interesting corners of our planet. From Moscow to Tashkent — your dream journey begins here.</p>
                 <div class="hero-buttons">
-                    <a href="#tours" class="btn btn-primary">Choose Tour</a>
-                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                    <a href="#tours" class="btn btn-primary" data-translate="hero.chooseTour">Choose Tour</a>
+                    <a href="#about" class="btn btn-secondary" data-translate="hero.learnMore">Learn More</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -55,29 +61,29 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <h2>About Me</h2>
-                <p>Your guide to unforgettable journeys</p>
+                <h2 data-translate="about.title">About Me</h2>
+                <p data-translate="about.subtitle">Your guide to unforgettable journeys</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Hello! My name is [Your Name]</h3>
-                    <p>I am a professional guide with more than 10 years of experience organizing tours to Russia and Central Asian countries. My passion for travel and deep knowledge of cultural characteristics of the regions help create unique routes.</p>
+                    <h3 data-translate="about.greeting">Hello! My name is [Your Name]</h3>
+                    <p data-translate="about.description">I am a professional guide with more than 10 years of experience organizing tours to Russia and Central Asian countries. My passion for travel and deep knowledge of cultural characteristics of the regions help create unique routes.</p>
                     
                     <div class="experience-grid">
                         <div class="experience-item">
                             <i class="fas fa-map-marked-alt"></i>
-                            <h4>500+ tours</h4>
-                            <p>Successfully conducted journeys</p>
+                            <h4>100+ tours</h4>
+                            <p data-translate="about.tours">Successfully conducted journeys</p>
                         </div>
                         <div class="experience-item">
                             <i class="fas fa-users"></i>
                             <h4>2000+ tourists</h4>
-                            <p>Satisfied customers</p>
+                            <p data-translate="about.tourists">Satisfied customers</p>
                         </div>
                         <div class="experience-item">
                             <i class="fas fa-star"></i>
                             <h4>4.9/5</h4>
-                            <p>Average tour rating</p>
+                            <p data-translate="about.rating">Average tour rating</p>
                         </div>
                     </div>
                 </div>
@@ -92,31 +98,31 @@
     <section id="tours" class="tours">
         <div class="container">
             <div class="section-header">
-                <h2>Our Tours</h2>
-                <p>Choose your next adventure destination</p>
+                <h2 data-translate="tours.title">Our Tours</h2>
+                <p data-translate="tours.subtitle">Choose your next adventure destination</p>
             </div>
             
             <!-- Russia Tours -->
             <div class="country-section">
                 <h3 class="country-title">
                     <i class="fas fa-flag"></i>
-                    Russia
+                    <span data-translate="tours.russia">Russia</span>
                 </h3>
                 <div class="tours-grid">
                     <div class="tour-card">
-                        <div class="tour-image">
+                            <div class="tour-image">
                             <img src="img/moscow.jpg" alt="Moscow">
-                            <div class="tour-badge">Popular</div>
+                            <div class="tour-badge" data-translate="tours.popular">Popular</div>
                         </div>
                         <div class="tour-content">
-                            <h4>Moscow - Heart of Russia</h4>
-                            <p>Red Square, Kremlin, Tretyakov Gallery and much more. Immerse yourself in the history and culture of the capital.</p>
-                            <div class="tour-details">
-                                <span><i class="fas fa-clock"></i> 5 days</span>
-                                <span><i class="fas fa-users"></i> Up to 12 people</span>
-                                <span><i class="fas fa-dollar-sign"></i> From $400</span>
-                            </div>
-                            <a href="#contact" class="btn btn-outline">Learn More</a>
+                            <h4 data-translate="tours.moscow.title">Moscow - Heart of Russia</h4>
+                            <p data-translate="tours.moscow.description">Red Square, Kremlin, Tretyakov Gallery and much more. Immerse yourself in the history and culture of the capital.</p>
+                            <!-- <div class="tour-details">
+                                <span><i class="fas fa-clock"></i> <span data-translate="tours.moscow.days">5 days</span></span>
+                                <span><i class="fas fa-users"></i> <span data-translate="tours.moscow.people">Up to 12 people</span></span>
+                                <span><i class="fas fa-dollar-sign"></i> <span data-translate="tours.moscow.price">From $400</span></span>
+                            </div> -->
+                            <a href="tours/moscow.html" class="btn btn-outline" data-translate="tours.learnMore">Learn More</a>
                         </div>
                     </div>
 
@@ -125,14 +131,9 @@
                             <img src="img/st peterburg.jpg" alt="St. Petersburg">
                         </div>
                         <div class="tour-content">
-                            <h4>St. Petersburg - Cultural Capital</h4>
-                            <p>Hermitage, Peterhof, white nights. The romantic atmosphere of the Northern Venice awaits you.</p>
-                            <div class="tour-details">
-                                <span><i class="fas fa-clock"></i> 6 days</span>
-                                <span><i class="fas fa-users"></i> Up to 10 people</span>
-                                <span><i class="fas fa-dollar-sign"></i> From $450</span>
-                            </div>
-                            <a href="#contact" class="btn btn-outline">Learn More</a>
+                            <h4 data-translate="tours.petersburg.title">St. Petersburg - Cultural Capital</h4>
+                            <p data-translate="tours.petersburg.description">Hermitage, Peterhof, white nights. The romantic atmosphere of the Northern Venice awaits you.</p>
+                            <a href="tours/petersburg.html" class="btn btn-outline" data-translate="tours.learnMore">Learn More</a>
                         </div>
                     </div>
 
@@ -141,14 +142,9 @@
                             <img src="img/kazan.jpg" alt="Kazan">
                         </div>
                         <div class="tour-content">
-                            <h4>Kazan - City of Contrasts</h4>
-                            <p>Kul Sharif Mosque, Kazan Kremlin, thousand-year history. Unique fusion of cultures.</p>
-                            <div class="tour-details">
-                                <span><i class="fas fa-clock"></i> 4 days</span>
-                                <span><i class="fas fa-users"></i> Up to 15 people</span>
-                                <span><i class="fas fa-dollar-sign"></i> From $290</span>
-                            </div>
-                            <a href="#contact" class="btn btn-outline">Learn More</a>
+                            <h4 data-translate="tours.kazan.title">Kazan - City of Contrasts</h4>
+                            <p data-translate="tours.kazan.description">Kul Sharif Mosque, Kazan Kremlin, thousand-year history. Unique fusion of cultures.</p>
+                            <a href="tours/kazan.html" class="btn btn-outline" data-translate="tours.learnMore">Learn More</a>
                         </div>
                     </div>
 
@@ -157,16 +153,34 @@
                             <img src="img/murmansk.jpg" alt="Murmansk">
                         </div>
                         <div class="tour-content">
-                            <h4>Murmansk - Land of Northern Lights</h4>
-                            <p>Northern lights, northern coast, nuclear icebreaker. Unique Arctic expedition.</p>
-                            <div class="tour-details">
-                                <span><i class="fas fa-clock"></i> 7 days</span>
-                                <span><i class="fas fa-users"></i> Up to 8 people</span>
-                                <span><i class="fas fa-dollar-sign"></i> From $560</span>
-                            </div>
-                            <a href="#contact" class="btn btn-outline">Learn More</a>
+                            <h4 data-translate="tours.murmansk.title">Murmansk - Land of Northern Lights</h4>
+                            <p data-translate="tours.murmansk.description">Northern lights, northern coast, nuclear icebreaker. Unique Arctic expedition.</p> 
+                            <a href="tours/murmansk.html" class="btn btn-outline" data-translate="tours.learnMore">Learn More</a>
                         </div>
                     </div>
+
+                    <div class="tour-card">
+                        <div class="tour-image">
+                            <img src="img/dagestan.jpg" alt="Dagestan">
+                        </div>
+                        <div class="tour-content">
+                            <h4 data-translate="tours.dagestan.title">Dagestan - Land of Mountains and Traditions</h4>
+                            <p data-translate="tours.dagestan.description">Ancient Derbent, Sulak Canyon, mountain villages. Rich culture and stunning nature of the Caucasus.</p>
+                            <a href="tours/dagestan.html" class="btn btn-outline" data-translate="tours.learnMore">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="tour-card">
+                        <div class="tour-image">
+                            <img src="img/chechnya.jpg" alt="Chechnya">
+                        </div>
+                        <div class="tour-content">
+                            <h4 data-translate="tours.chechnya.title">Chechnya - Heart of the Caucasus</h4>
+                            <p data-translate="tours.chechnya.description">Grozny, Argun Gorge, ancient towers. Modern architecture meets ancient traditions.</p>
+                            <a href="tours/chechnya.html" class="btn btn-outline" data-translate="tours.learnMore">Learn More</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -174,7 +188,7 @@
             <div class="country-section">
                 <h3 class="country-title">
                     <i class="fas fa-mountain"></i>
-                    Central Asia
+                    <span data-translate="tours.centralAsia">Central Asia</span>
                 </h3>
                 <div class="tours-grid">
                     <div class="tour-card">
@@ -182,14 +196,9 @@
                             <img src="img/kazakhstan.jpg" alt="Kazakhstan">
                         </div>
                         <div class="tour-content">
-                            <h4>Kazakhstan - Great Steppe</h4>
-                            <p>Almaty, Astana, endless steppes and modern cities. Intersection of traditions and innovations.</p>
-                            <div class="tour-details">
-                                <span><i class="fas fa-clock"></i> 8 days</span>
-                                <span><i class="fas fa-users"></i> Up to 12 people</span>
-                                <span><i class="fas fa-dollar-sign"></i> From $720</span>
-                            </div>
-                            <a href="#contact" class="btn btn-outline">Learn More</a>
+                            <h4 data-translate="tours.kazakhstan.title">Kazakhstan - Great Steppe</h4>
+                            <p data-translate="tours.kazakhstan.description">Almaty, Astana, endless steppes and modern cities. Intersection of traditions and innovations.</p>
+                            <a href="tours/kazakhstan.html" class="btn btn-outline" data-translate="tours.learnMore">Learn More</a>
                         </div>
                     </div>
 
@@ -198,14 +207,9 @@
                             <img src="img/kyrgyzstan.webp" alt="Kyrgyzstan">
                         </div>
                         <div class="tour-content">
-                            <h4>Kyrgyzstan - Land of Heavenly Mountains</h4>
-                            <p>Issyk-Kul, Bishkek, nomadic culture. Natural beauty and ancient traditions.</p>
-                            <div class="tour-details">
-                                <span><i class="fas fa-clock"></i> 10 days</span>
-                                <span><i class="fas fa-users"></i> Up to 10 people</span>
-                                <span><i class="fas fa-dollar-sign"></i> From $670</span>
-                            </div>
-                            <a href="#contact" class="btn btn-outline">Learn More</a>
+                            <h4 data-translate="tours.kyrgyzstan.title">Kyrgyzstan - Land of Heavenly Mountains</h4>
+                            <p data-translate="tours.kyrgyzstan.description">Issyk-Kul, Bishkek, nomadic culture. Natural beauty and ancient traditions.</p>
+                            <a href="tours/kyrgyzstan.html" class="btn btn-outline" data-translate="tours.learnMore">Learn More</a>
                         </div>
                     </div>
 
@@ -214,14 +218,9 @@
                             <img src="img/Uzbekistan.webp" alt="Uzbekistan">
                         </div>
                         <div class="tour-content">
-                            <h4>Uzbekistan - Pearl of the Silk Road</h4>
-                            <p>Samarkand, Bukhara, Khiva. Ancient cities with rich history and stunning architecture.</p>
-                            <div class="tour-details">
-                                <span><i class="fas fa-clock"></i> 9 days</span>
-                                <span><i class="fas fa-users"></i> Up to 14 people</span>
-                                <span><i class="fas fa-dollar-sign"></i> From $610</span>
-                            </div>
-                            <a href="#contact" class="btn btn-outline">Learn More</a>
+                            <h4 data-translate="tours.uzbekistan.title">Uzbekistan - Pearl of the Silk Road</h4>
+                            <p data-translate="tours.uzbekistan.description">Samarkand, Bukhara, Khiva. Ancient cities with rich history and stunning architecture.</p>
+                            <a href="tours/uzbekistan.html" class="btn btn-outline" data-translate="tours.learnMore">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -299,57 +298,57 @@
     <section id="faq" class="faq">
         <div class="container">
             <div class="section-header">
-                <h2>Frequently Asked Questions</h2>
-                <p>Everything you need to know about our tours</p>
+                <h2 data-translate="faq.title">Frequently Asked Questions</h2>
+                <p data-translate="faq.subtitle">Everything you need to know about our tours</p>
             </div>
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h4>What is included in the tour price?</h4>
+                        <h4 data-translate="faq.q1.question">What is included in the tour price?</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>The price includes: accommodation in 3-4* hotels, meals (breakfasts, some lunches), transportation, guide services, entrance tickets to museums and attractions, medical insurance.</p>
+                        <p data-translate="faq.q1.answer">The price includes: accommodation in 3-4* hotels, meals (breakfasts, some lunches), transportation, guide services, entrance tickets to museums and attractions, medical insurance.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h4>What is the group size?</h4>
+                        <h4 data-translate="faq.q2.question">What is the group size?</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>We work with small groups of 6 to 15 people, which ensures an individual approach to each tourist and a comfortable atmosphere.</p>
+                        <p data-translate="faq.q2.answer">We work with small groups of 6 to 15 people, which ensures an individual approach to each tourist and a comfortable atmosphere.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h4>What documents are needed for the trip?</h4>
+                        <h4 data-translate="faq.q3.question">What documents are needed for the trip?</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>For tours in Russia: Russian passport. For Central Asia: international passport (valid for at least 6 months), visa (if required). We will help with the preparation of all necessary documents.</p>
+                        <p data-translate="faq.q3.answer">For tours in Russia: Russian passport. For Central Asia: international passport (valid for at least 6 months), visa (if required). We will help with the preparation of all necessary documents.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h4>Can the tour program be changed?</h4>
+                        <h4 data-translate="faq.q4.question">Can the tour program be changed?</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, we are always ready to adapt the program to your wishes and interests. Discuss this in advance, and we will make the necessary changes.</p>
+                        <p data-translate="faq.q4.answer">Yes, we are always ready to adapt the program to your wishes and interests. Discuss this in advance, and we will make the necessary changes.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h4>What to do if the weather gets bad?</h4>
+                        <h4 data-translate="faq.q5.question">What to do if the weather gets bad?</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>We always have backup options for bad weather. We visit museums, covered attractions, or change the route to one more suitable for current conditions.</p>
+                        <p data-translate="faq.q5.answer">We always have backup options for bad weather. We visit museums, covered attractions, or change the route to one more suitable for current conditions.</p>
                     </div>
                 </div>
             </div>
@@ -360,29 +359,29 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2>Contact Us</h2>
-                <p>Ready to embark on a journey? Let's discuss the details!</p>
+                <h2 data-translate="contact.title">Contact Us</h2>
+                <p data-translate="contact.subtitle">Ready to embark on a journey? Let's discuss the details!</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <h4>Phone</h4>
+                            <h4 data-translate="contact.phone">Phone</h4>
                             <p>+7 (XXX) XXX-XX-XX</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h4>Email</h4>
+                            <h4 data-translate="contact.email">Email</h4>
                             <p>info@travelexpert.ru</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h4>Address</h4>
+                            <h4 data-translate="contact.address">Address</h4>
                             <p>Moscow, Example Street, 123</p>
                         </div>
                     </div>
@@ -393,7 +392,7 @@
                         <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
                     </div>
                 </div>
-                <div class="contact-form">
+               <!--  <div class="contact-form">
                     <form action="https://docs.google.com/forms/d/e/your-form-id/formResponse" method="POST" target="_blank">
                         <div class="form-group">
                             <input type="text" name="entry.123456789" placeholder="Your Name" required>
@@ -421,7 +420,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Send Request</button>
                     </form>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -432,25 +431,25 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>TravelExpert</h3>
-                    <p>Professional tours to Russia and Central Asia</p>
+                    <p data-translate="footer.description">Professional tours to Russia and Central Asia</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Destinations</h4>
+                    <h4 data-translate="footer.destinations">Destinations</h4>
                     <ul>
-                        <li><a href="#tours">Russia</a></li>
-                        <li><a href="#tours">Kazakhstan</a></li>
-                        <li><a href="#tours">Kyrgyzstan</a></li>
-                        <li><a href="#tours">Uzbekistan</a></li>
+                        <li><a href="#tours" data-translate="tours.russia">Russia</a></li>
+                        <li><a href="#tours" data-translate="tours.kazakhstan.country">Kazakhstan</a></li>
+                        <li><a href="#tours" data-translate="tours.kyrgyzstan.country">Kyrgyzstan</a></li>
+                        <li><a href="#tours" data-translate="tours.uzbekistan.country">Uzbekistan</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contacts</h4>
+                    <h4 data-translate="footer.contacts">Contacts</h4>
                     <p>+7 (XXX) XXX-XX-XX</p>
                     <p>info@travelexpert.ru</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 TravelExpert. All rights reserved.</p>
+                <p data-translate="footer.copyright">&copy; 2024 TravelExpert. All rights reserved.</p>
             </div>
         </div>
     </footer>
