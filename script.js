@@ -5,7 +5,6 @@ const translations = {
             home: "Home",
             about: "About",
             tours: "Tours",
-            reviews: "Reviews",
             faq: "FAQ",
             contact: "Contact"
         },
@@ -58,6 +57,13 @@ const translations = {
                 days: "7 days",
                 people: "Up to 8 people",
                 price: "From $560"
+            },
+            baikal: {
+                title: "Irkutsk – Gateway to Lake Baikal",
+                description: "Siberian charm, wooden architecture, and Baikal nearby. A city of history, nature, and true winter atmosphere.",
+                days: "5 days",
+                people: "Up to 10 people",
+                price: "From $400"
             },
             dagestan: {
                 title: "Dagestan - Land of Mountains and Traditions",
@@ -134,6 +140,190 @@ const translations = {
             destinations: "Destinations",
             contacts: "Contacts",
             copyright: "© 2024 TravelExpert. All rights reserved."
+        },
+        tour: {
+            backToTours: "Back to Tours",
+            overview: "Overview",
+            highlights: "Highlights",
+            itinerary: "Itinerary",
+            included: "What's Included",
+            priceFrom: "From",
+            perPerson: "per person",
+            duration: "Duration",
+            groupSize: "Group Size",
+            available: "Available",
+            yearRound: "Year-round",
+            location: "Location",
+            bookNow: "Book Now",
+            contactUs: "Contact Us",
+            included: {
+                accommodation: "Accommodation in 3-4* hotels",
+                meals: "Breakfasts and some lunches",
+                transport: "All transportation",
+                guide: "Professional guide",
+                tickets: "Entrance tickets",
+                insurance: "Medical insurance"
+            },
+            moscow: {
+                pageTitle: "Moscow - Heart of Russia | TravelExpert",
+                metaDescription: "Discover Moscow - the capital of Russia. Red Square, Kremlin, Tretyakov Gallery and much more. Professional guided tours.",
+                title: "Moscow - Heart of Russia",
+                subtitle: "Discover the capital of Russia with its rich history, stunning architecture, and vibrant culture",
+                overview: "Moscow, the capital of Russia, is a city where history and modernity coexist. From the iconic Red Square and the majestic Kremlin to world-class museums and theaters, Moscow offers an unforgettable experience. This 5-day tour will take you through the most significant landmarks and hidden gems of the city.",
+                highlight1: "Red Square and St. Basil's Cathedral",
+                highlight2: "Moscow Kremlin with Armory Chamber",
+                highlight3: "Tretyakov Gallery - Russian art collection",
+                highlight4: "Moscow Metro - underground palaces",
+                highlight5: "Gorky Park and Sparrow Hills",
+                highlight6: "Bolshoi Theatre (exterior visit)",
+                duration: "5 days / 4 nights",
+                groupSize: "Up to 12 people",
+                location: "Moscow, Russia"
+            },
+            petersburg: {
+                pageTitle: "St. Petersburg - Cultural Capital | TravelExpert",
+                metaDescription: "Discover St. Petersburg - the cultural capital of Russia. Hermitage, Peterhof, white nights and much more.",
+                title: "St. Petersburg - Cultural Capital",
+                subtitle: "Experience the romantic atmosphere of the Northern Venice with its palaces, museums, and white nights",
+                overview: "St. Petersburg, often called the Northern Venice, is Russia's cultural capital. With its magnificent palaces, world-renowned museums, and the magical white nights, this city offers a unique blend of European elegance and Russian grandeur. This 6-day tour showcases the best of imperial Russia.",
+                highlight1: "Hermitage Museum - one of the world's largest",
+                highlight2: "Peterhof Palace and fountains",
+                highlight3: "Catherine Palace and Amber Room",
+                highlight4: "St. Isaac's Cathedral",
+                highlight5: "Nevsky Prospect - main street",
+                highlight6: "White Nights experience (seasonal)",
+                duration: "6 days / 5 nights",
+                groupSize: "Up to 10 people",
+                location: "St. Petersburg, Russia"
+            },
+            kazan: {
+                pageTitle: "Kazan - City of Contrasts | TravelExpert",
+                metaDescription: "Discover Kazan - a unique fusion of cultures. Kul Sharif Mosque, Kazan Kremlin, and thousand-year history.",
+                title: "Kazan - City of Contrasts",
+                subtitle: "Explore the unique fusion of Tatar and Russian cultures in this thousand-year-old city",
+                overview: "Kazan, the capital of Tatarstan, is a city where East meets West. With its thousand-year history, stunning mosques, and Orthodox cathedrals standing side by side, Kazan represents a perfect harmony of cultures. This 4-day tour reveals the rich heritage of the Volga region.",
+                highlight1: "Kul Sharif Mosque - largest in Russia",
+                highlight2: "Kazan Kremlin - UNESCO World Heritage",
+                highlight3: "Bauman Street - pedestrian promenade",
+                highlight4: "Temple of All Religions",
+                highlight5: "Old Tatar Quarter",
+                highlight6: "Kazan Riviera - modern entertainment complex",
+                duration: "4 days / 3 nights",
+                groupSize: "Up to 15 people",
+                location: "Kazan, Russia"
+            },
+            murmansk: {
+                pageTitle: "Murmansk - Land of Northern Lights | TravelExpert",
+                metaDescription: "Discover Murmansk - unique Arctic expedition with northern lights, northern coast, and nuclear icebreaker.",
+                title: "Murmansk - Land of Northern Lights",
+                subtitle: "Experience the magic of the Arctic with northern lights, polar nights, and unique Arctic adventures",
+                overview: "Murmansk, located beyond the Arctic Circle, offers a truly unique experience. From the spectacular northern lights to the nuclear icebreaker Lenin, this region showcases the harsh beauty of the Russian North. This 7-day tour is perfect for adventure seekers and nature lovers.",
+                highlight1: "Northern Lights (Aurora Borealis)",
+                highlight2: "Nuclear icebreaker Lenin",
+                highlight3: "Teriberka - Arctic coast",
+                highlight4: "Kola Bay and fjords",
+                highlight5: "Samoyed village experience",
+                highlight6: "Polar night phenomenon",
+                duration: "7 days / 6 nights",
+                groupSize: "Up to 8 people",
+                location: "Murmansk, Russia"
+            },
+            baikal: {
+                pageTitle: "Irkutsk – Gateway to Lake Baikal | TravelExpert",
+                metaDescription: "Discover Irkutsk and Lake Baikal - Siberian charm, wooden architecture, and the deepest lake in the world.",
+                title: "Irkutsk – Gateway to Lake Baikal",
+                subtitle: "Experience Siberian charm, wooden architecture, and the pristine beauty of Lake Baikal",
+                overview: "Irkutsk, the gateway to Lake Baikal, is a city of Siberian charm with its unique wooden architecture and rich history. Lake Baikal, the deepest and oldest lake in the world, offers breathtaking natural beauty. This 5-day tour combines cultural exploration with natural wonders.",
+                highlight1: "Lake Baikal - deepest lake in the world",
+                highlight2: "Listvyanka village",
+                highlight3: "Irkutsk wooden architecture",
+                highlight4: "Baikal Museum",
+                highlight5: "Circum-Baikal Railway",
+                highlight6: "Olkhon Island",
+                duration: "5 days / 4 nights",
+                groupSize: "Up to 10 people",
+                location: "Irkutsk, Russia"
+            },
+            dagestan: {
+                pageTitle: "Dagestan - Land of Mountains and Traditions | TravelExpert",
+                metaDescription: "Discover Dagestan - ancient Derbent, Sulak Canyon, mountain villages. Rich culture and stunning nature of the Caucasus.",
+                title: "Dagestan - Land of Mountains and Traditions",
+                subtitle: "Explore the rich culture and stunning nature of the Caucasus with ancient cities and mountain villages",
+                overview: "Dagestan, located in the North Caucasus, is a land of incredible diversity. From the ancient city of Derbent to the dramatic Sulak Canyon and traditional mountain villages, this region offers a unique blend of history, culture, and natural beauty. This 6-day tour reveals the authentic Caucasus.",
+                highlight1: "Ancient Derbent - UNESCO World Heritage",
+                highlight2: "Sulak Canyon - deepest in Russia",
+                highlight3: "Mountain villages and towers",
+                highlight4: "Caspian Sea coast",
+                highlight5: "Traditional crafts and cuisine",
+                highlight6: "Caucasus Mountains hiking",
+                duration: "6 days / 5 nights",
+                groupSize: "Up to 10 people",
+                location: "Dagestan, Russia"
+            },
+            chechnya: {
+                pageTitle: "Chechnya - Heart of the Caucasus | TravelExpert",
+                metaDescription: "Discover Chechnya - Grozny, Argun Gorge, ancient towers. Modern architecture meets ancient traditions.",
+                title: "Chechnya - Heart of the Caucasus",
+                subtitle: "Discover modern Grozny and ancient traditions in the heart of the Caucasus",
+                overview: "Chechnya, in the heart of the Caucasus, showcases a fascinating blend of modern architecture and ancient traditions. From the rebuilt capital Grozny to the historic Argun Gorge and ancient towers, this region offers unique insights into Caucasian culture. This 5-day tour explores both the new and the old.",
+                highlight1: "Grozny - modern capital",
+                highlight2: "Argun Gorge - natural wonder",
+                highlight3: "Ancient defensive towers",
+                highlight4: "Heart of Chechnya Mosque",
+                highlight5: "Traditional Chechen culture",
+                highlight6: "Caucasus Mountains views",
+                duration: "5 days / 4 nights",
+                groupSize: "Up to 12 people",
+                location: "Chechnya, Russia"
+            },
+            kazakhstan: {
+                pageTitle: "Kazakhstan - Great Steppe | TravelExpert",
+                metaDescription: "Discover Kazakhstan - Almaty, Astana, endless steppes and modern cities. Intersection of traditions and innovations.",
+                title: "Kazakhstan - Great Steppe",
+                subtitle: "Experience the endless steppes, modern cities, and the intersection of traditions and innovations",
+                overview: "Kazakhstan, the world's largest landlocked country, offers a unique journey through vast steppes and modern cities. From the cultural capital Almaty to the futuristic Astana, this country showcases the perfect blend of nomadic traditions and modern innovations. This 8-day tour covers the best of Kazakhstan.",
+                highlight1: "Almaty - cultural capital",
+                highlight2: "Astana (Nur-Sultan) - futuristic capital",
+                highlight3: "Charyn Canyon - Grand Canyon of Asia",
+                highlight4: "Big Almaty Lake",
+                highlight5: "Medeu skating rink",
+                highlight6: "Traditional Kazakh yurts",
+                duration: "8 days / 7 nights",
+                groupSize: "Up to 12 people",
+                location: "Kazakhstan"
+            },
+            kyrgyzstan: {
+                pageTitle: "Kyrgyzstan - Land of Heavenly Mountains | TravelExpert",
+                metaDescription: "Discover Kyrgyzstan - Issyk-Kul, Bishkek, nomadic culture. Natural beauty and ancient traditions.",
+                title: "Kyrgyzstan – Land of Mountains and Freedom",
+                subtitle: "Experience towering peaks, clear mountain lakes, and nomadic traditions—where nature and culture exist in perfect harmony",
+                overview: "Kyrgyzstan is a country of breathtaking landscapes and deep nomadic heritage. Snowy mountains, alpine valleys, and the crystal waters of Issyk-Kul create a sense of pure, untouched nature. Yurts, horseback traditions, and welcoming communities preserve the rhythm of ancient life. For travelers, Kyrgyzstan feels like a journey into the heart of freedom and adventure.",
+                highlight1: "Issyk-Kul Lake",
+                highlight2: "Ala-Archa National Park",
+                highlight3: "Osh Bazaar (Bishkek)",
+                highlight4: "Burana Tower",
+                highlight5: "Son-Kul Lake",
+                highlight6: "Arslanbob Valley",
+                duration: "10 days / 9 nights",
+                groupSize: "Up to 10 people",
+                location: "Kyrgyzstan"
+            },
+            uzbekistan: {
+                pageTitle: "Uzbekistan - Pearl of the Silk Road | TravelExpert",
+                metaDescription: "Discover Uzbekistan - Samarkand, Bukhara, Khiva. Ancient cities with rich history and stunning architecture.",
+                title: "Uzbekistan - Pearl of the Silk Road",
+                subtitle: "Journey through ancient Silk Road cities with stunning Islamic architecture and rich history",
+                overview: "Uzbekistan, the heart of the ancient Silk Road, is home to some of the world's most magnificent Islamic architecture. From the blue domes of Samarkand to the ancient walls of Khiva, this country offers a journey through centuries of history. This 9-day tour explores the legendary cities of Central Asia.",
+                highlight1: "Samarkand - Registan Square",
+                highlight2: "Bukhara - ancient trading center",
+                highlight3: "Khiva - walled city museum",
+                highlight4: "Tashkent - modern capital",
+                highlight5: "Shah-i-Zinda necropolis",
+                highlight6: "Traditional bazaars and crafts",
+                duration: "9 days / 8 nights",
+                groupSize: "Up to 14 people",
+                location: "Uzbekistan"
+            }
         }
     },
     id: {
@@ -141,7 +331,6 @@ const translations = {
             home: "Beranda",
             about: "Tentang",
             tours: "Tur",
-            reviews: "Ulasan",
             faq: "FAQ",
             contact: "Kontak"
         },
@@ -194,6 +383,13 @@ const translations = {
                 days: "7 hari",
                 people: "Hingga 8 orang",
                 price: "Mulai dari $560"
+            },
+            baikal: {
+                title: "Irkutsk – Gerbang menuju Danau Baikal",
+                description: "Pesona Siberia, arsitektur kayu, dan Danau Baikal yang dekat.",
+                days: "5 hari",
+                people: "Hingga 10 orang",
+                price: "Mulai dari $400"
             },
             dagestan: {
                 title: "Dagestan - Tanah Gunung dan Tradisi",
@@ -270,6 +466,190 @@ const translations = {
             destinations: "Destinasi",
             contacts: "Kontak",
             copyright: "© 2024 TravelExpert. Hak cipta dilindungi."
+        },
+        tour: {
+            backToTours: "Kembali ke Tur",
+            overview: "Ringkasan",
+            highlights: "Sorotan",
+            itinerary: "Rencana Perjalanan",
+            included: "Apa yang Termasuk",
+            priceFrom: "Mulai dari",
+            perPerson: "per orang",
+            duration: "Durasi",
+            groupSize: "Ukuran Grup",
+            available: "Tersedia",
+            yearRound: "Sepanjang tahun",
+            location: "Lokasi",
+            bookNow: "Pesan Sekarang",
+            contactUs: "Hubungi Kami",
+            included: {
+                accommodation: "Akomodasi di hotel 3-4*",
+                meals: "Sarapan dan beberapa makan siang",
+                transport: "Semua transportasi",
+                guide: "Pemandu profesional",
+                tickets: "Tiket masuk",
+                insurance: "Asuransi kesehatan"
+            },
+            moscow: {
+                pageTitle: "Moskow - Jantung Rusia | TravelExpert",
+                metaDescription: "Temukan Moskow - ibu kota Rusia. Lapangan Merah, Kremlin, Galeri Tretyakov dan banyak lagi. Tur berpemandu profesional.",
+                title: "Moskow - Jantung Rusia",
+                subtitle: "Temukan ibu kota Rusia dengan sejarah kaya, arsitektur menakjubkan, dan budaya yang hidup",
+                overview: "Moskow, ibu kota Rusia, adalah kota di mana sejarah dan modernitas hidup berdampingan. Dari Lapangan Merah yang ikonik dan Kremlin yang megah hingga museum dan teater kelas dunia, Moskow menawarkan pengalaman yang tak terlupakan. Tur 5 hari ini akan membawa Anda melalui landmark paling signifikan dan permata tersembunyi kota.",
+                highlight1: "Lapangan Merah dan Katedral St. Basil",
+                highlight2: "Kremlin Moskow dengan Kamar Senjata",
+                highlight3: "Galeri Tretyakov - koleksi seni Rusia",
+                highlight4: "Metro Moskow - istana bawah tanah",
+                highlight5: "Taman Gorky dan Bukit Sparrow",
+                highlight6: "Teater Bolshoi (kunjungan eksterior)",
+                duration: "5 hari / 4 malam",
+                groupSize: "Hingga 12 orang",
+                location: "Moskow, Rusia"
+            },
+            petersburg: {
+                pageTitle: "St. Petersburg - Ibu Kota Budaya | TravelExpert",
+                metaDescription: "Temukan St. Petersburg - ibu kota budaya Rusia. Hermitage, Peterhof, malam putih dan banyak lagi.",
+                title: "St. Petersburg - Ibu Kota Budaya",
+                subtitle: "Rasakan atmosfer romantis Venesia Utara dengan istana, museum, dan malam putihnya",
+                overview: "St. Petersburg, sering disebut Venesia Utara, adalah ibu kota budaya Rusia. Dengan istana megah, museum terkenal di dunia, dan malam putih yang magis, kota ini menawarkan perpaduan unik antara keanggunan Eropa dan keagungan Rusia. Tur 6 hari ini menampilkan yang terbaik dari Rusia kekaisaran.",
+                highlight1: "Museum Hermitage - salah satu terbesar di dunia",
+                highlight2: "Istana Peterhof dan air mancur",
+                highlight3: "Istana Catherine dan Ruang Amber",
+                highlight4: "Katedral St. Isaac",
+                highlight5: "Nevsky Prospect - jalan utama",
+                highlight6: "Pengalaman Malam Putih (musiman)",
+                duration: "6 hari / 5 malam",
+                groupSize: "Hingga 10 orang",
+                location: "St. Petersburg, Rusia"
+            },
+            kazan: {
+                pageTitle: "Kazan - Kota Kontras | TravelExpert",
+                metaDescription: "Temukan Kazan - perpaduan unik budaya. Masjid Kul Sharif, Kremlin Kazan, dan sejarah seribu tahun.",
+                title: "Kazan - Kota Kontras",
+                subtitle: "Jelajahi perpaduan unik budaya Tatar dan Rusia di kota berusia seribu tahun ini",
+                overview: "Kazan, ibu kota Tatarstan, adalah kota di mana Timur bertemu Barat. Dengan sejarah seribu tahun, masjid menakjubkan, dan katedral Ortodoks berdampingan, Kazan mewakili harmoni sempurna budaya. Tur 4 hari ini mengungkap warisan kaya wilayah Volga.",
+                highlight1: "Masjid Kul Sharif - terbesar di Rusia",
+                highlight2: "Kremlin Kazan - Warisan Dunia UNESCO",
+                highlight3: "Jalan Bauman - promenade pejalan kaki",
+                highlight4: "Kuil Semua Agama",
+                highlight5: "Kawasan Tatar Lama",
+                highlight6: "Kazan Riviera - kompleks hiburan modern",
+                duration: "4 hari / 3 malam",
+                groupSize: "Hingga 15 orang",
+                location: "Kazan, Rusia"
+            },
+            murmansk: {
+                pageTitle: "Murmansk - Tanah Cahaya Utara | TravelExpert",
+                metaDescription: "Temukan Murmansk - ekspedisi Arktik unik dengan cahaya utara, pantai utara, dan kapal pemecah es nuklir.",
+                title: "Murmansk - Tanah Cahaya Utara",
+                subtitle: "Rasakan keajaiban Arktik dengan cahaya utara, malam kutub, dan petualangan Arktik yang unik",
+                overview: "Murmansk, terletak di luar Lingkaran Arktik, menawarkan pengalaman yang benar-benar unik. Dari cahaya utara yang spektakuler hingga kapal pemecah es nuklir Lenin, wilayah ini menampilkan keindahan keras Rusia Utara. Tur 7 hari ini sempurna untuk pencari petualangan dan pecinta alam.",
+                highlight1: "Cahaya Utara (Aurora Borealis)",
+                highlight2: "Kapal pemecah es nuklir Lenin",
+                highlight3: "Teriberka - pantai Arktik",
+                highlight4: "Teluk Kola dan fjord",
+                highlight5: "Pengalaman desa Samoyed",
+                highlight6: "Fenomena malam kutub",
+                duration: "7 hari / 6 malam",
+                groupSize: "Hingga 8 orang",
+                location: "Murmansk, Rusia"
+            },
+            baikal: {
+                pageTitle: "Irkutsk – Gerbang menuju Danau Baikal | TravelExpert",
+                metaDescription: "Temukan Irkutsk dan Danau Baikal - pesona Siberia, arsitektur kayu, dan danau terdalam di dunia.",
+                title: "Irkutsk – Gerbang menuju Danau Baikal",
+                subtitle: "Rasakan pesona Siberia, arsitektur kayu, dan keindahan murni Danau Baikal",
+                overview: "Irkutsk, gerbang menuju Danau Baikal, adalah kota dengan pesona Siberia dengan arsitektur kayu unik dan sejarah kaya. Danau Baikal, danau terdalam dan tertua di dunia, menawarkan keindahan alam yang menakjubkan. Tur 5 hari ini menggabungkan eksplorasi budaya dengan keajaiban alam.",
+                highlight1: "Danau Baikal - danau terdalam di dunia",
+                highlight2: "Desa Listvyanka",
+                highlight3: "Arsitektur kayu Irkutsk",
+                highlight4: "Museum Baikal",
+                highlight5: "Kereta Api Circum-Baikal",
+                highlight6: "Pulau Olkhon",
+                duration: "5 hari / 4 malam",
+                groupSize: "Hingga 10 orang",
+                location: "Irkutsk, Rusia"
+            },
+            dagestan: {
+                pageTitle: "Dagestan - Tanah Gunung dan Tradisi | TravelExpert",
+                metaDescription: "Temukan Dagestan - Derbent kuno, Ngarai Sulak, desa-desa pegunungan. Budaya kaya dan alam menakjubkan Kaukasus.",
+                title: "Dagestan - Tanah Gunung dan Tradisi",
+                subtitle: "Jelajahi budaya kaya dan alam menakjubkan Kaukasus dengan kota-kota kuno dan desa-desa pegunungan",
+                overview: "Dagestan, terletak di Kaukasus Utara, adalah tanah dengan keragaman yang luar biasa. Dari kota kuno Derbent hingga Ngarai Sulak yang dramatis dan desa-desa pegunungan tradisional, wilayah ini menawarkan perpaduan unik sejarah, budaya, dan keindahan alam. Tur 6 hari ini mengungkap Kaukasus yang autentik.",
+                highlight1: "Derbent Kuno - Warisan Dunia UNESCO",
+                highlight2: "Ngarai Sulak - terdalam di Rusia",
+                highlight3: "Desa dan menara pegunungan",
+                highlight4: "Pantai Laut Kaspia",
+                highlight5: "Kerajinan dan masakan tradisional",
+                highlight6: "Pendakian Pegunungan Kaukasus",
+                duration: "6 hari / 5 malam",
+                groupSize: "Hingga 10 orang",
+                location: "Dagestan, Rusia"
+            },
+            chechnya: {
+                pageTitle: "Chechnya - Jantung Kaukasus | TravelExpert",
+                metaDescription: "Temukan Chechnya - Grozny, Ngarai Argun, menara kuno. Arsitektur modern bertemu tradisi kuno.",
+                title: "Chechnya - Jantung Kaukasus",
+                subtitle: "Temukan Grozny modern dan tradisi kuno di jantung Kaukasus",
+                overview: "Chechnya, di jantung Kaukasus, menampilkan perpaduan menarik antara arsitektur modern dan tradisi kuno. Dari ibu kota Grozny yang dibangun kembali hingga Ngarai Argun bersejarah dan menara kuno, wilayah ini menawarkan wawasan unik tentang budaya Kaukasia. Tur 5 hari ini menjelajahi yang baru dan yang lama.",
+                highlight1: "Grozny - ibu kota modern",
+                highlight2: "Ngarai Argun - keajaiban alam",
+                highlight3: "Menara pertahanan kuno",
+                highlight4: "Masjid Jantung Chechnya",
+                highlight5: "Budaya Chechnya tradisional",
+                highlight6: "Pemandangan Pegunungan Kaukasus",
+                duration: "5 hari / 4 malam",
+                groupSize: "Hingga 12 orang",
+                location: "Chechnya, Rusia"
+            },
+            kazakhstan: {
+                pageTitle: "Kazakhstan - Stepa Besar | TravelExpert",
+                metaDescription: "Temukan Kazakhstan - Almaty, Astana, stepa tak berujung dan kota-kota modern. Persimpangan tradisi dan inovasi.",
+                title: "Kazakhstan - Stepa Besar",
+                subtitle: "Rasakan stepa tak berujung, kota-kota modern, dan persimpangan tradisi dan inovasi",
+                overview: "Kazakhstan, negara terkurung daratan terbesar di dunia, menawarkan perjalanan unik melalui stepa luas dan kota-kota modern. Dari ibu kota budaya Almaty hingga Astana yang futuristik, negara ini menampilkan perpaduan sempurna antara tradisi nomaden dan inovasi modern. Tur 8 hari ini mencakup yang terbaik dari Kazakhstan.",
+                highlight1: "Almaty - ibu kota budaya",
+                highlight2: "Astana (Nur-Sultan) - ibu kota futuristik",
+                highlight3: "Ngarai Charyn - Grand Canyon Asia",
+                highlight4: "Danau Big Almaty",
+                highlight5: "Lapangan es Medeu",
+                highlight6: "Yurt Kazakh tradisional",
+                duration: "8 hari / 7 malam",
+                groupSize: "Hingga 12 orang",
+                location: "Kazakhstan"
+            },
+            kyrgyzstan: {
+                pageTitle: "Kyrgyzstan - Tanah Gunung Surga | TravelExpert",
+                metaDescription: "Temukan Kyrgyzstan - Issyk-Kul, Bishkek, budaya nomaden. Keindahan alam dan tradisi kuno.",
+                title: "Kyrgyzstan – Tanah Gunung dan Kebebasan",
+                subtitle: "Rasakan puncak menjulang, danau pegunungan jernih, dan tradisi nomaden—di mana alam dan budaya hidup dalam harmoni sempurna",
+                overview: "Kyrgyzstan adalah negara dengan pemandangan menakjubkan dan warisan nomaden yang mendalam. Gunung bersalju, lembah alpine, dan perairan kristal Issyk-Kul menciptakan rasa alam murni yang tak tersentuh. Yurt, tradisi berkuda, dan komunitas yang ramah melestarikan ritme kehidupan kuno. Bagi para pelancong, Kyrgyzstan terasa seperti perjalanan ke jantung kebebasan dan petualangan.",
+                highlight1: "Danau Issyk-Kul",
+                highlight2: "Taman Nasional Ala-Archa",
+                highlight3: "Pasar Osh (Bishkek)",
+                highlight4: "Menara Burana",
+                highlight5: "Danau Son-Kul",
+                highlight6: "Lembah Arslanbob",
+                duration: "10 hari / 9 malam",
+                groupSize: "Hingga 10 orang",
+                location: "Kyrgyzstan"
+            },
+            uzbekistan: {
+                pageTitle: "Uzbekistan - Mutiara Jalur Sutra | TravelExpert",
+                metaDescription: "Temukan Uzbekistan - Samarkand, Bukhara, Khiva. Kota-kota kuno dengan sejarah kaya dan arsitektur menakjubkan.",
+                title: "Uzbekistan - Mutiara Jalur Sutra",
+                subtitle: "Jelajahi kota-kota Jalur Sutra kuno dengan arsitektur Islam yang menakjubkan dan sejarah kaya",
+                overview: "Uzbekistan, jantung Jalur Sutra kuno, adalah rumah bagi beberapa arsitektur Islam paling megah di dunia. Dari kubah biru Samarkand hingga dinding kuno Khiva, negara ini menawarkan perjalanan melalui berabad-abad sejarah. Tur 9 hari ini menjelajahi kota-kota legendaris Asia Tengah.",
+                highlight1: "Samarkand - Lapangan Registan",
+                highlight2: "Bukhara - pusat perdagangan kuno",
+                highlight3: "Khiva - museum kota bertembok",
+                highlight4: "Tashkent - ibu kota modern",
+                highlight5: "Nekropolis Shah-i-Zinda",
+                highlight6: "Pasar dan kerajinan tradisional",
+                duration: "9 hari / 8 malam",
+                groupSize: "Hingga 14 orang",
+                location: "Uzbekistan"
+            }
         }
     }
 };
@@ -316,7 +696,25 @@ function setLanguage(lang) {
     
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
+    if (metaDescription && metaDescription.hasAttribute('data-translate')) {
+        const metaKey = metaDescription.getAttribute('data-translate');
+        const metaKeys = metaKey.split('.');
+        let metaTranslation = translations[lang];
+        
+        for (let k of metaKeys) {
+            if (metaTranslation && metaTranslation[k]) {
+                metaTranslation = metaTranslation[k];
+            } else {
+                metaTranslation = null;
+                break;
+            }
+        }
+        
+        if (metaTranslation) {
+            metaDescription.content = metaTranslation;
+        }
+    } else if (metaDescription && !metaDescription.hasAttribute('data-translate')) {
+        // Fallback for index page
         if (lang === 'en') {
             metaDescription.content = "Unique tours to Russia, Kazakhstan, Kyrgyzstan and Uzbekistan. Professional guides, interesting routes, unforgettable experiences.";
         } else {
@@ -325,9 +723,25 @@ function setLanguage(lang) {
     }
     
     // Update page title
-    if (lang === 'en') {
-        document.title = "Tours to Russia and Central Asia | Professional Travel Services";
-    } else {
+    const titleElement = document.querySelector('title');
+    if (titleElement && titleElement.hasAttribute('data-translate')) {
+        const titleKey = titleElement.getAttribute('data-translate');
+        const titleKeys = titleKey.split('.');
+        let titleTranslation = translations[lang];
+        
+        for (let k of titleKeys) {
+            if (titleTranslation && titleTranslation[k]) {
+                titleTranslation = titleTranslation[k];
+            } else {
+                titleTranslation = null;
+                break;
+            }
+        }
+        
+        if (titleTranslation) {
+            document.title = titleTranslation;
+        }
+    } else if (lang === 'en') {
         document.title = "Tur ke Rusia dan Asia Tengah | Layanan Perjalanan Profesional";
     }
 }
@@ -537,7 +951,7 @@ const experienceObserver = new IntersectionObserver(function(entries) {
         if (entry.isIntersecting) {
             const counters = entry.target.querySelectorAll('h4');
             counters.forEach((counter, index) => {
-                const targets = [500, 2000, 5]; // 500+ tours, 2000+ tourists, 4.9/5
+                const targets = [100, 2000, 5]; // 500+ tours, 2000+ tourists, 4.9/5
                 setTimeout(() => {
                     if (index < 2) {
                         animateCounter(counter, targets[index]);
@@ -636,32 +1050,6 @@ backToTopBtn.addEventListener('mouseleave', function() {
 
 // Social media link handlers (placeholder)
 document.addEventListener('DOMContentLoaded', function() {
-    const socialLinks = document.querySelectorAll('.social-link');
-    
-    socialLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const platform = this.querySelector('i').className;
-            
-            let url = '#';
-            switch(true) {
-                case platform.includes('telegram'):
-                    url = 'https://t.me/your_telegram_username';
-                    break;
-                case platform.includes('whatsapp'):
-                    url = 'https://wa.me/your_phone_number';
-                    break;
-                case platform.includes('instagram'):
-                    url = 'https://instagram.com/your_instagram_username';
-                    break;
-                case platform.includes('vk'):
-                    url = 'https://vk.com/your_vk_username';
-                    break;
-            }
-            
-            window.open(url, '_blank');
-        });
-    });
 });
 
 // Tour selection tracking
