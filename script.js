@@ -17,8 +17,8 @@ const translations = {
         about: {
             title: "About Us",
             subtitle: "Your guide to unforgettable journeys",
-            greeting: "Hello! My name is [Your Name]",
-            description: "I am a professional guide with more than 10 years of experience organizing tours to Russia and Central Asian countries. My passion for travel and deep knowledge of cultural characteristics of the regions help create unique routes.",
+            greeting: "Explore the world with confidence.",
+            description: "Starting from our love of exploring the beauty of the world, we are here for you to design your dream trip. We believe that vacations should be flexible, exciting, and affordable. Let us take care of the technical details so you can focus on enjoying your destination. Come explore Russia with us!",
             tours: "Successfully conducted journeys",
             tourists: "Satisfied customers",
             rating: "Average tour rating"
@@ -169,10 +169,10 @@ const translations = {
                 metaDescription: "Discover Moscow - the capital of Russia. Red Square, Kremlin, Tretyakov Gallery and much more. Professional guided tours.",
                 title: "Moscow - Heart of Russia",
                 subtitle: "Discover the capital of Russia with its rich history, stunning architecture, and vibrant culture",
-                overview: "Moscow, the capital of Russia, is a city where history and modernity coexist. From the iconic Red Square and the majestic Kremlin to world-class museums and theaters, Moscow offers an unforgettable experience. This 5-day tour will take you through the most significant landmarks and hidden gems of the city.",
+                overview: "Moscow is the vibrant capital of Russia, combining centuries of history with modern energy and innovation. Iconic places like the Kremlin and Red Square showcase the city’s powerful past and cultural significance. It is a fast-paced metropolis with impressive architecture, from ancient churches to futuristic skyscrapers. Moscow’s dynamic lifestyle, museums, theaters, and nightlife make it a city full of life and contrast.",
                 highlight1: "Red Square and St. Basil's Cathedral",
-                highlight2: "Moscow Kremlin with Armory Chamber",
-                highlight3: "Tretyakov Gallery - Russian art collection",
+                highlight2: "Moscow Kremlin",
+                highlight3: "Sparrow Hills",
                 highlight4: "Moscow Metro - underground palaces",
                 highlight5: "Gorky Park and Sparrow Hills",
                 highlight6: "Bolshoi Theatre (exterior visit)",
@@ -343,8 +343,8 @@ const translations = {
         about: {
             title: "Tentang Kita",
             subtitle: "Pemandu Anda untuk perjalanan yang tak terlupakan",
-            greeting: "Halo! Nama saya [Nama Anda]",
-            description: "Saya adalah pemandu profesional dengan pengalaman lebih dari 10 tahun mengorganisir tur ke Rusia dan negara-negara Asia Tengah. Passion saya untuk bepergian dan pengetahuan mendalam tentang karakteristik budaya daerah membantu menciptakan rute yang unik.",
+            greeting: "Jelajahi dunia dengan penuh percaya diri.",
+            description: "Berawal dari kecintaan kami menjelajahi keindahan belahan dunia, kami hadir untuk anda merancang perjalanan impian anda, kami percaya liburan itu harus fleksibel seru dan aman di kantong. Biar kami mengurus detail teknis nya, anda fokus menikmati destinasinya. Ayo jelajahi Rusia bersama kami!",
             tours: "Perjalanan yang berhasil dilakukan",
             tourists: "Pelanggan yang puas",
             rating: "Rating tur rata-rata"
@@ -495,10 +495,10 @@ const translations = {
                 metaDescription: "Temukan Moskow - ibu kota Rusia. Lapangan Merah, Kremlin, Galeri Tretyakov dan banyak lagi. Tur berpemandu profesional.",
                 title: "Moskow - Jantung Rusia",
                 subtitle: "Temukan ibu kota Rusia dengan sejarah kaya, arsitektur menakjubkan, dan budaya yang hidup",
-                overview: "Moskow, ibu kota Rusia, adalah kota di mana sejarah dan modernitas hidup berdampingan. Dari Lapangan Merah yang ikonik dan Kremlin yang megah hingga museum dan teater kelas dunia, Moskow menawarkan pengalaman yang tak terlupakan. Tur 5 hari ini akan membawa Anda melalui landmark paling signifikan dan permata tersembunyi kota.",
+                overview: "Moskwa adalah ibu kota Rusia yang dinamis, menggabungkan sejarah berabad-abad dengan energi modern dan inovasi. Tempat-tempat ikonik seperti Kremlin dan Lapangan Merah menampilkan masa lalu yang kuat dan signifikansi budaya kota ini. Moskwa adalah metropolis yang sibuk dengan arsitektur yang mengesankan, mulai dari gereja kuno hingga pencakar langit futuristik. Gaya hidup dinamis Moskwa, museum, teater, dan kehidupan malamnya menjadikan kota ini penuh dengan kehidupan dan kontras.",
                 highlight1: "Lapangan Merah dan Katedral St. Basil",
-                highlight2: "Kremlin Moskow dengan Kamar Senjata",
-                highlight3: "Galeri Tretyakov - koleksi seni Rusia",
+                highlight2: "Kremlin Moskow",
+                highlight3: "Sparrow Hills",
                 highlight4: "Metro Moskow - istana bawah tanah",
                 highlight5: "Taman Gorky dan Bukit Sparrow",
                 highlight6: "Teater Bolshoi (kunjungan eksterior)",
@@ -1094,4 +1094,44 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
+
+// Gallery functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const gallerySlides = document.querySelectorAll('.gallery-slide');
+    const prevBtn = document.querySelector('.gallery-btn-prev');
+    const nextBtn = document.querySelector('.gallery-btn-next');
+    let currentSlide = 0;
+
+    if (gallerySlides.length === 0) return;
+
+    function showSlide(index) {
+        gallerySlides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % gallerySlides.length;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + gallerySlides.length) % gallerySlides.length;
+        showSlide(currentSlide);
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', nextSlide);
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', prevSlide);
+    }
+
+    // Initialize first slide
+    showSlide(0);
 });
