@@ -18,10 +18,13 @@ const translations = {
             title: "About Us",
             subtitle: "Your guide to unforgettable journeys",
             greeting: "Explore the world with confidence.",
-            description: "Starting from our love of exploring the beauty of the world, we are here for you to design your dream trip. We believe that vacations should be flexible, exciting, and affordable. Let us take care of the technical details so you can focus on enjoying your destination. Come explore Russia with us!",
+            description: "Starting from our love of exploring the beauty of the world, we are here for you to design your dream trip. We believe that vacations should be flexible, exciting, and affordable. Let us take care of the technical details so you can focus on enjoying your destination. We are ready to cooperate and arrange trips with all tour operators interested in Russia. We can also arrange private tours, offer tour programs, or make recommendations to tour operators who work with us.",
             tours: "Successfully conducted journeys",
             tourists: "Satisfied customers",
             rating: "Average tour rating"
+        },
+        gallery: {
+            text: "We are a travel agency offering tours from Indonesia to Russia since 2018. Over the years, we have organized more than 100 group trips and partnered with many trusted companies. With strong experience and deep knowledge of Russian destinations, we provide professional service, exciting itineraries, and safe, comfortable travel."
         },
         tours: {
             title: "Our Tours",
@@ -344,10 +347,13 @@ const translations = {
             title: "Tentang Kita",
             subtitle: "Pemandu Anda untuk perjalanan yang tak terlupakan",
             greeting: "Jelajahi dunia dengan penuh percaya diri.",
-            description: "Berawal dari kecintaan kami menjelajahi keindahan belahan dunia, kami hadir untuk anda merancang perjalanan impian anda, kami percaya liburan itu harus fleksibel seru dan aman di kantong. Biar kami mengurus detail teknis nya, anda fokus menikmati destinasinya. Ayo jelajahi Rusia bersama kami!",
+            description: "Berawal dari kecintaan kami menjelajahi keindahan belahan dunia, kami hadir untuk anda merancang perjalanan impian anda, kami percaya liburan itu harus fleksibel seru dan aman di kantong. Biar kami mengurus detail teknis nya, anda fokus menikmati destinasinya. Kami siap bekerja sama  dan mengurus trip dengan semua tour travel  yang tertarik dengan Rusia. Kami juga dapat mengurus private tour  menawarkan program tour atau dapat merekomendasikan kepada tour travel yang bekerja sama dengan kami.",
             tours: "Perjalanan yang berhasil dilakukan",
             tourists: "Pelanggan yang puas",
             rating: "Rating tur rata-rata"
+        },
+        gallery: {
+            text: "Kami adalah agen perjalanan yang menyediakan tur dari Indonesia ke Rusia sejak 2018. Selama ini, kami telah menangani lebih dari 100 grup dan bekerja sama dengan banyak perusahaan terpercaya. Dengan pengalaman dan pengetahuan mendalam tentang destinasi Rusia, kami menawarkan layanan profesional, rute menarik, serta perjalanan yang aman dan nyaman."
         },
         tours: {
             title: "Tur Kami",
