@@ -111,11 +111,11 @@ const translations = {
             title: "Frequently Asked Questions",
             subtitle: "Everything you need to know about our tours",
             q1: {
-                question: "What is included in the tour price?",
+                question: "Do you process visas?",
                 answer: "The price includes: accommodation in 3-4* hotels, meals (breakfasts, some lunches), transportation, guide services, entrance tickets to museums and attractions, medical insurance."
             },
             q2: {
-                question: "What is the group size?",
+                question: "Are meals included in the tour?",
                 answer: "We work with small groups of 6 to 15 people, which ensures an individual approach to each tourist and a comfortable atmosphere."
             },
             q3: {
@@ -1000,13 +1000,24 @@ window.addEventListener('load', function() {
     }, 100);
 });
 
+// Floating WhatsApp button
+const whatsappBtn = document.createElement('a');
+whatsappBtn.href = 'https://wa.me/79773259914?text=Halo, saya ingin mengetahui informasi tentang tur ini.';
+whatsappBtn.target = '_blank';
+whatsappBtn.rel = 'noopener noreferrer';
+whatsappBtn.className = 'floating-whatsapp';
+whatsappBtn.setAttribute('aria-label', 'Contact us on WhatsApp');
+whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i>';
+
+document.body.appendChild(whatsappBtn);
+
 // Back to top button
 const backToTopBtn = document.createElement('button');
 backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
 backToTopBtn.className = 'back-to-top';
 backToTopBtn.style.cssText = `
     position: fixed;
-    bottom: 20px;
+    bottom: 92px;
     right: 20px;
     width: 50px;
     height: 50px;
@@ -1108,36 +1119,69 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevBtn = document.querySelector('.gallery-btn-prev');
     const nextBtn = document.querySelector('.gallery-btn-next');
     let currentSlide = 0;
+    let isTransitioning = false;
+    const transitionDuration = 600; // milliseconds
 
     if (gallerySlides.length === 0) return;
 
     function showSlide(index) {
-        gallerySlides.forEach((slide, i) => {
-            slide.classList.remove('active');
-            if (i === index) {
-                slide.classList.add('active');
-            }
-        });
+        // Prevent multiple transitions
+        if (isTransitioning) {
+            return;
+        }
+
+        // Don't do anything if it's the same slide
+        if (index === currentSlide) {
+            return;
+        }
+
+        isTransitioning = true;
+
+        // Remove active class from current slide
+        gallerySlides[currentSlide].classList.remove('active');
+
+        // Update current slide index
+        currentSlide = index;
+
+        // Add active class to new slide (with small delay for fade effect)
+        setTimeout(() => {
+            gallerySlides[currentSlide].classList.add('active');
+        }, 50);
+
+        // Reset transition flag after animation completes
+        setTimeout(() => {
+            isTransitioning = false;
+        }, transitionDuration);
     }
 
     function nextSlide() {
-        currentSlide = (currentSlide + 1) % gallerySlides.length;
-        showSlide(currentSlide);
+        if (isTransitioning) return;
+        const nextIndex = (currentSlide + 1) % gallerySlides.length;
+        showSlide(nextIndex);
     }
 
     function prevSlide() {
-        currentSlide = (currentSlide - 1 + gallerySlides.length) % gallerySlides.length;
-        showSlide(currentSlide);
+        if (isTransitioning) return;
+        const prevIndex = (currentSlide - 1 + gallerySlides.length) % gallerySlides.length;
+        showSlide(prevIndex);
     }
 
     if (nextBtn) {
-        nextBtn.addEventListener('click', nextSlide);
+        nextBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            nextSlide();
+        });
     }
 
     if (prevBtn) {
-        prevBtn.addEventListener('click', prevSlide);
+        prevBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            prevSlide();
+        });
     }
 
     // Initialize first slide
-    showSlide(0);
+    if (gallerySlides.length > 0) {
+        gallerySlides[0].classList.add('active');
+    }
 });
