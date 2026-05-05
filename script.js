@@ -132,11 +132,19 @@ const translations = {
             }
         },
         contact: {
-            title: "Contact Us",
-            subtitle: "Ready to embark on a journey? Let's discuss the details!",
+            eyebrow: "Get in Touch",
+            title: "Ready for Your Next Journey?",
+            subtitle: "We will help you choose the right tour and answer your questions.",
+            description: "Choose a convenient way to contact us. We speak English and Indonesian and will gladly help you plan your trip.",
             phone: "Phone",
             email: "Email",
-            address: "Address"
+            address: "Address",
+            addressValue: "Moscow, Saltykovskaya Street 11, Office 1",
+            social: {
+                whatsapp: "WhatsApp",
+                telegram: "Telegram",
+                instagram: "Instagram"
+            }
         },
         footer: {
             description: "Professional tours to Russia and Central Asia",
@@ -461,11 +469,19 @@ const translations = {
             }
         },
         contact: {
-            title: "Hubungi Kami",
-            subtitle: "Siap untuk memulai perjalanan? Mari kita diskusikan detailnya!",
+            eyebrow: "Hubungi Kami",
+            title: "Siap untuk Perjalanan Anda Berikutnya?",
+            subtitle: "Kami akan membantu Anda memilih tur yang tepat dan menjawab pertanyaan Anda.",
+            description: "Pilih cara termudah untuk menghubungi kami. Kami berbicara dalam bahasa Inggris dan Indonesia dan siap membantu merencanakan perjalanan Anda.",
             phone: "Telepon",
             email: "Email",
-            address: "Alamat"
+            address: "Alamat",
+            addressValue: "Moskow, Jalan Saltykovskaya 11, Kantor 1",
+            social: {
+                whatsapp: "WhatsApp",
+                telegram: "Telegram",
+                instagram: "Instagram"
+            }
         },
         footer: {
             description: "Tur profesional ke Rusia dan Asia Tengah",
