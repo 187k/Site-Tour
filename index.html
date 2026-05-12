@@ -10,48 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <div class="logo">
-                    <h2>TravelExpert</h2>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link" data-translate="nav.home">Home</a></li>
-                    <li><a href="#about" class="nav-link" data-translate="nav.about">About</a></li>
-                    <li class="nav-dropdown">
-                        <a href="#tours" class="nav-link" data-translate="nav.tours">Tours <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="tours/moscow.html">Moscow</a></li>
-                            <li><a href="tours/petersburg.html">St. Petersburg</a></li>
-                            <li><a href="tours/kazan.html">Kazan</a></li>
-                            <li><a href="tours/murmansk.html">Murmansk</a></li>
-                            <li><a href="tours/baikal.html">Irkutsk</a></li>
-                            <li><a href="tours/dagestan.html">Dagestan</a></li>
-                            <li><a href="tours/chechnya.html">Chechnya</a></li>
-                            <li><a href="tours/kazakhstan.html">Kazakhstan</a></li>
-                            <li><a href="tours/kyrgyzstan.html">Kyrgyzstan</a></li>
-                            <li><a href="tours/uzbekistan.html">Uzbekistan</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#faq" class="nav-link" data-translate="nav.faq">FAQ</a></li>
-                    <li><a href="#contact" class="nav-link" data-translate="nav.contact">Contact</a></li>
-                </ul>
-                <div class="header-right">
-                    <div class="language-switcher">
-                        <button class="lang-btn active" data-lang="en">EN</button>
-                        <button class="lang-btn" data-lang="id">ID</button>
-                    </div>
-                    <div class="hamburger">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <div id="site-header" data-base-path=""></div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -262,6 +221,7 @@
             </div>
 
             <!-- Central Asia Tours -->
+            <a href="#tours-central-asia"></a>
             <div class="country-section" id="tours-central-asia">
                 <h3 class="country-title">
                     <i class="fas fa-mountain"></i>
@@ -320,7 +280,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p data-translate="faq.q1.answer">The price includes: accommodation in 3-4* hotels, meals (breakfasts, some lunches), transportation, guide services, entrance tickets to museums and attractions, medical insurance.</p>
+                        <p data-translate="faq.q1.answer">Yes, we can assist with visa processing</p>
                     </div>
                 </div>
 
@@ -330,7 +290,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p data-translate="faq.q2.answer">We work with small groups of 6 to 15 people, which ensures an individual approach to each tourist and a comfortable atmosphere.</p>
+                        <p data-translate="faq.q2.answer">Yes, we can organize meals during the tour upon your request.</p>
                     </div>
                 </div>
 
@@ -461,9 +421,9 @@
                     <h4 data-translate="footer.destinations">Destinations</h4>
                     <ul>
                         <li><a href="#tours" data-translate="tours.russia">Russia</a></li>
-                        <li><a href="#tours" data-translate="tours.kazakhstan.country">Kazakhstan</a></li>
-                        <li><a href="#tours" data-translate="tours.kyrgyzstan.country">Kyrgyzstan</a></li>
-                        <li><a href="#tours" data-translate="tours.uzbekistan.country">Uzbekistan</a></li>
+                        <li><a href="#tours-central-asia" data-translate="tours.kazakhstan.country">Kazakhstan</a></li>
+                        <li><a href="#tours-central-asia" data-translate="tours.kyrgyzstan.country">Kyrgyzstan</a></li>
+                        <li><a href="#tours-central-asia" data-translate="tours.uzbekistan.country">Uzbekistan</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -478,6 +438,7 @@
         </div>
     </footer>
 
+    <script src="shared-components.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

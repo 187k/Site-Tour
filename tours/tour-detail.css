@@ -89,6 +89,21 @@
     max-width: 100%;
 }
 
+.tour-gallery-section {
+    padding: 0 0 4rem;
+    background: white;
+}
+
+.tour-gallery-section .gallery-content {
+    display: block;
+    margin-top: 0;
+}
+
+.tour-gallery-section .gallery-container {
+    max-width: 720px;
+    margin: left;
+}
+
 .tour-section {
     margin-bottom: 3rem;
 }
@@ -347,6 +362,7 @@
     .tour-hero-subtitle {
         font-size: 1.1rem;
     }
+
 }
 
 @media (max-width: 768px) {
@@ -362,7 +378,7 @@
     .tour-hero-content h1 {
         font-size: 2rem;
     }
-    
+
     .included-grid {
         grid-template-columns: 1fr;
     }
@@ -400,6 +416,7 @@
     .price-amount {
         font-size: 2rem;
     }
+
 }
 
 

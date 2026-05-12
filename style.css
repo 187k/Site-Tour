@@ -210,6 +210,7 @@ p {
 .dropdown-menu li {
     list-style: none;
     margin: 0;
+    position: relative;
 }
 
 .dropdown-menu a {
@@ -225,6 +226,44 @@ p {
     background: #f8f9fa;
     color: #667eea;
     padding-left: 25px;
+}
+
+.dropdown-parent {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.dropdown-parent i {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.submenu {
+    position: absolute;
+    top: 0;
+    left: calc(100% - 10px);
+    background: white;
+    min-width: 240px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    padding: 10px 0;
+    z-index: 1001;
+}
+
+.dropdown-submenu:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.dropdown-submenu:hover .dropdown-parent i {
+    transform: translateX(3px);
 }
 
 .header-right {
@@ -1007,6 +1046,37 @@ p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .gallery-container {
+        display: block;
+    }
+
+    .gallery-slider {
+        width: 100%;
+    }
+
+    .gallery-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+    }
+
+    .gallery-btn:hover {
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    .gallery-btn:active {
+        transform: translateY(-50%) scale(0.95);
+    }
+
+    .gallery-btn-prev {
+        left: 12px;
+    }
+
+    .gallery-btn-next {
+        right: 12px;
+    }
+
     .hamburger {
         display: flex;
     }
@@ -1061,6 +1131,26 @@ p {
     .dropdown-menu a:hover {
         padding-left: 10px;
         background: transparent;
+    }
+
+    .dropdown-parent {
+        justify-content: center;
+    }
+
+    .submenu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: transparent;
+        min-width: 0;
+        padding: 0.25rem 0 0;
+        margin-left: 1rem;
+    }
+
+    .dropdown-parent i {
+        display: none;
     }
     
     h1 {

@@ -11,48 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <div class="logo">
-                    <a href="../index.html"><h2>TravelExpert</h2></a>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="../index.html#home" class="nav-link" data-translate="nav.home">Home</a></li>
-                    <li><a href="../index.html#about" class="nav-link" data-translate="nav.about">About</a></li>
-                    <li class="nav-dropdown">
-                        <a href="../index.html#tours" class="nav-link" data-translate="nav.tours">Tours <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="moscow.html">Moscow</a></li>
-                            <li><a href="petersburg.html">St. Petersburg</a></li>
-                            <li><a href="kazan.html">Kazan</a></li>
-                            <li><a href="murmansk.html">Murmansk</a></li>
-                            <li><a href="baikal.html">Irkutsk</a></li>
-                            <li><a href="dagestan.html">Dagestan</a></li>
-                            <li><a href="chechnya.html">Chechnya</a></li>
-                            <li><a href="kazakhstan.html">Kazakhstan</a></li>
-                            <li><a href="kyrgyzstan.html">Kyrgyzstan</a></li>
-                            <li><a href="uzbekistan.html">Uzbekistan</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="../index.html#faq" class="nav-link" data-translate="nav.faq">FAQ</a></li>
-                    <li><a href="../index.html#contact" class="nav-link" data-translate="nav.contact">Contact</a></li>
-                </ul>
-                <div class="header-right">
-                    <div class="language-switcher">
-                        <button class="lang-btn active" data-lang="en">EN</button>
-                        <button class="lang-btn" data-lang="id">ID</button>
-                    </div>
-                    <div class="hamburger">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <div id="site-header" data-base-path="../"></div>
 
     <!-- Tour Hero Section -->
     <section class="tour-hero">
@@ -132,6 +91,55 @@
         </div>
     </section>
 
+    <section class="tour-gallery-section">
+        <div class="container">
+            <div class="gallery-content">
+                <div class="gallery-container">
+                    <button class="gallery-btn gallery-btn-prev" aria-label="Previous image">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="gallery-slider">
+                        <div class="gallery-track">
+                            <div class="gallery-slide active">
+                                <img src="../img/gallery/gallery1.jpg" alt="Gallery photo 1" class="gallery-photo">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="../img/gallery/gallery2.jpg" alt="Gallery photo 2" class="gallery-photo">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="../img/gallery/gallery3.jpg" alt="Gallery photo 3" class="gallery-photo">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="../img/gallery/gallery4.jpg" alt="Gallery photo 4" class="gallery-photo">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="../img/gallery/gallery5.jpg" alt="Gallery photo 5" class="gallery-photo">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="../img/gallery/gallery6.jpg" alt="Gallery photo 6" class="gallery-photo">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="../img/gallery/gallery7.jpg" alt="Gallery photo 7" class="gallery-photo">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="../img/gallery/gallery8.jpg" alt="Gallery photo 8" class="gallery-photo">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="../img/gallery/gallery9.jpg" alt="Gallery photo 9" class="gallery-photo">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="../img/gallery/gallery10.jpg" alt="Gallery photo 10" class="gallery-photo">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="gallery-btn gallery-btn-next" aria-label="Next image">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -161,6 +169,7 @@
         </div>
     </footer>
 
+    <script src="../shared-components.js"></script>
     <script src="../script.js"></script>
     <script src="tour-detail.js"></script>
 </body>

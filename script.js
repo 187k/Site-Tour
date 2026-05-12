@@ -112,11 +112,11 @@ const translations = {
             subtitle: "Everything you need to know about our tours",
             q1: {
                 question: "Do you process visas?",
-                answer: "The price includes: accommodation in 3-4* hotels, meals (breakfasts, some lunches), transportation, guide services, entrance tickets to museums and attractions, medical insurance."
+                answer: "Yes, we can assist with visa processing."
             },
             q2: {
                 question: "Are meals included in the tour?",
-                answer: "We work with small groups of 6 to 15 people, which ensures an individual approach to each tourist and a comfortable atmosphere."
+                answer: "Yes, we can organize meals during the tour upon your request."
             },
             q3: {
                 question: "What documents are needed for the trip?",
@@ -449,11 +449,11 @@ const translations = {
             subtitle: "Semua yang perlu Anda ketahui tentang tur kami",
             q1: {
                 question: "Apa yang termasuk dalam harga tur?",
-                answer: "Harga termasuk: akomodasi di hotel 3-4*, makanan (sarapan, beberapa makan siang), transportasi, layanan pemandu, tiket masuk ke museum dan atraksi, asuransi kesehatan."
+                answer: "Ya, kami dapat membantu pengurusan visa."
             },
             q2: {
                 question: "Berapa ukuran grup?",
-                answer: "Kami bekerja dengan grup kecil 6 hingga 15 orang, yang memastikan pendekatan individual untuk setiap wisatawan dan suasana yang nyaman."
+                answer: "Ya, kami dapat mengatur makanan selama tour sesuai permintaan Anda."
             },
             q3: {
                 question: "Dokumen apa yang diperlukan untuk perjalanan?",
