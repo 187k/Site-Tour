@@ -31,6 +31,7 @@ const translations = {
             subtitle: "Choose your next adventure destination",
             russia: "Russia",
             centralAsia: "Central Asia",
+            caucasus: "South Caucasus",
             popular: "Popular",
             learnMore: "Learn More",
             moscow: {
@@ -105,6 +106,30 @@ const translations = {
                 people: "Up to 14 people",
                 price: "From $610",
                 country: "Uzbekistan"
+            },
+            georgia: {
+                title: "Georgia - Land of Wine and Mountains",
+                description: "Tbilisi, Kazbegi, ancient churches and legendary hospitality. Where Europe meets Asia.",
+                days: "7 days",
+                people: "Up to 12 people",
+                price: "From $550",
+                country: "Georgia"
+            },
+            azerbaijan: {
+                title: "Azerbaijan - Land of Fire",
+                description: "Baku, mud volcanoes, Old City. Modern architecture and ancient fire temples.",
+                days: "6 days",
+                people: "Up to 12 people",
+                price: "From $480",
+                country: "Azerbaijan"
+            },
+            armenia: {
+                title: "Armenia - Cradle of Christianity",
+                description: "Yerevan, Lake Sevan, ancient monasteries. One of the world's oldest civilizations.",
+                days: "6 days",
+                people: "Up to 12 people",
+                price: "From $460",
+                country: "Armenia"
             }
         },
         faq: {
@@ -134,7 +159,7 @@ const translations = {
         contact: {
             eyebrow: "Get in Touch",
             title: "Ready for Your Next Journey?",
-            subtitle: "We will help you choose the right tour and answer your questions.",
+            subtitle: "We will help you choose the right tour, tailor the program to your wishes, and answer any questions you have.",
             description: "Choose a convenient way to contact us. We speak English and Indonesian and will gladly help you plan your trip.",
             phone: "Phone",
             email: "Email",
@@ -150,7 +175,7 @@ const translations = {
             description: "Professional tours to Russia and Central Asia",
             destinations: "Destinations",
             contacts: "Contacts",
-            copyright: "© 2024 TravelExpert. All rights reserved."
+            copyright: "© 2024 SoulRoute. All rights reserved."
         },
         tour: {
             backToTours: "Back to Tours",
@@ -320,7 +345,7 @@ const translations = {
                 location: "Kyrgyzstan"
             },
             uzbekistan: {
-                pageTitle: "Uzbekistan - Pearl of the Silk Road | TravelExpert",
+                pageTitle: "Uzbekistan - Pearl of the Silk Road | SoulRoute",
                 metaDescription: "Discover Uzbekistan - Samarkand, Bukhara, Khiva. Ancient cities with rich history and stunning architecture.",
                 title: "Uzbekistan - Pearl of the Silk Road",
                 subtitle: "Journey through ancient Silk Road cities with stunning Islamic architecture and rich history",
@@ -334,6 +359,54 @@ const translations = {
                 duration: "9 days / 8 nights",
                 groupSize: "Up to 14 people",
                 location: "Uzbekistan"
+            },
+            georgia: {
+                pageTitle: "Georgia - Land of Wine and Mountains | SoulRoute",
+                metaDescription: "Discover Georgia - Tbilisi, Kazbegi, ancient churches and legendary hospitality. Where Europe meets Asia.",
+                title: "Georgia - Land of Wine and Mountains",
+                subtitle: "Experience ancient traditions, stunning mountain landscapes, and the birthplace of wine",
+                overview: "Georgia, at the crossroads of Europe and Asia, is a land of breathtaking mountains, ancient churches, and legendary hospitality. From the colorful streets of Tbilisi to the snow-capped peaks of Kazbegi, this country offers a unique blend of history, culture, and natural beauty. This 7-day tour reveals the soul of the Caucasus.",
+                highlight1: "Tbilisi - charming capital with sulfur baths",
+                highlight2: "Kazbegi and Gergeti Trinity Church",
+                highlight3: "Mtskheta - ancient capital and UNESCO site",
+                highlight4: "Kakheti wine region",
+                highlight5: "Svetitskhoveli Cathedral",
+                highlight6: "Traditional Georgian feast (supra)",
+                duration: "7 days / 6 nights",
+                groupSize: "Up to 12 people",
+                location: "Georgia"
+            },
+            azerbaijan: {
+                pageTitle: "Azerbaijan - Land of Fire | SoulRoute",
+                metaDescription: "Discover Azerbaijan - Baku, mud volcanoes, Old City. Modern architecture and ancient fire temples.",
+                title: "Azerbaijan - Land of Fire",
+                subtitle: "Explore the contrast of futuristic Baku and ancient fire-worshipping traditions",
+                overview: "Azerbaijan, the Land of Fire, captivates with its dramatic contrast between ultra-modern Baku and ancient traditions. From the flame towers overlooking the Caspian Sea to the mud volcanoes of Gobustan and the walled Old City, this country offers a fascinating journey. This 6-day tour showcases the best of Azerbaijan.",
+                highlight1: "Baku Old City (Icherisheher) - UNESCO site",
+                highlight2: "Flame Towers and modern skyline",
+                highlight3: "Gobustan rock art and mud volcanoes",
+                highlight4: "Ateshgah Fire Temple",
+                highlight5: "Heydar Aliyev Center",
+                highlight6: "Caspian Sea boulevard",
+                duration: "6 days / 5 nights",
+                groupSize: "Up to 12 people",
+                location: "Azerbaijan"
+            },
+            armenia: {
+                pageTitle: "Armenia - Cradle of Christianity | SoulRoute",
+                metaDescription: "Discover Armenia - Yerevan, Lake Sevan, ancient monasteries. One of the world's oldest civilizations.",
+                title: "Armenia - Cradle of Christianity",
+                subtitle: "Journey through one of the world's oldest civilizations with ancient monasteries and mountain lakes",
+                overview: "Armenia, one of the world's oldest nations, is a treasure trove of ancient monasteries, dramatic landscapes, and rich cultural heritage. From the vibrant capital Yerevan to the serene Lake Sevan and the legendary Tatev Monastery, this country offers profound historical and natural beauty. This 6-day tour explores the heart of the South Caucasus.",
+                highlight1: "Yerevan - pink city capital",
+                highlight2: "Lake Sevan and Sevanavank Monastery",
+                highlight3: "Tatev Monastery and Wings of Tatev",
+                highlight4: "Garni Temple - Hellenistic monument",
+                highlight5: "Geghard Monastery - carved in rock",
+                highlight6: "Armenian brandy tasting",
+                duration: "6 days / 5 nights",
+                groupSize: "Up to 12 people",
+                location: "Armenia"
             }
         }
     },
@@ -368,6 +441,7 @@ const translations = {
             subtitle: "Pilih destinasi petualangan berikutnya Anda",
             russia: "Rusia",
             centralAsia: "Asia Tengah",
+            caucasus: "Kaukasus Selatan",
             popular: "Populer",
             learnMore: "Pelajari Lebih Lanjut",
             moscow: {
@@ -442,6 +516,30 @@ const translations = {
                 people: "Hingga 14 orang",
                 price: "Mulai dari $610",
                 country: "Uzbekistan"
+            },
+            georgia: {
+                title: "Georgia - Tanah Anggur dan Gunung",
+                description: "Tbilisi, Kazbegi, gereja kuno dan keramahtamahan legendaris. Di mana Eropa bertemu Asia.",
+                days: "7 hari",
+                people: "Hingga 12 orang",
+                price: "Mulai dari $550",
+                country: "Georgia"
+            },
+            azerbaijan: {
+                title: "Azerbaijan - Tanah Api",
+                description: "Baku, gunung berlumpur, Kota Tua. Arsitektur modern dan kuil api kuno.",
+                days: "6 hari",
+                people: "Hingga 12 orang",
+                price: "Mulai dari $480",
+                country: "Azerbaijan"
+            },
+            armenia: {
+                title: "Armenia - Buaian Kristianitas",
+                description: "Yerevan, Danau Sevan, biara kuno. Salah satu peradaban tertua di dunia.",
+                days: "6 hari",
+                people: "Hingga 12 orang",
+                price: "Mulai dari $460",
+                country: "Armenia"
             }
         },
         faq: {
@@ -471,7 +569,7 @@ const translations = {
         contact: {
             eyebrow: "Hubungi Kami",
             title: "Siap untuk Perjalanan Anda Berikutnya?",
-            subtitle: "Kami akan membantu Anda memilih tur yang tepat dan menjawab pertanyaan Anda.",
+            subtitle: "Kami akan membantu Anda memilih tur yang tepat, menyesuaikan program sesuai keinginan Anda, dan menjawab semua pertanyaan Anda.",
             description: "Pilih cara termudah untuk menghubungi kami. Kami berbicara dalam bahasa Inggris dan Indonesia dan siap membantu merencanakan perjalanan Anda.",
             phone: "Telepon",
             email: "Email",
@@ -487,7 +585,7 @@ const translations = {
             description: "Tur profesional ke Rusia dan Asia Tengah",
             destinations: "Destinasi",
             contacts: "Kontak",
-            copyright: "© 2024 TravelExpert. Hak cipta dilindungi."
+            copyright: "© 2024 SoulRoute. Hak cipta dilindungi."
         },
         tour: {
             backToTours: "Kembali ke Tur",
@@ -657,7 +755,7 @@ const translations = {
                 location: "Kyrgyzstan"
             },
             uzbekistan: {
-                pageTitle: "Uzbekistan - Mutiara Jalur Sutra | TravelExpert",
+                pageTitle: "Uzbekistan - Mutiara Jalur Sutra | SoulRoute",
                 metaDescription: "Temukan Uzbekistan - Samarkand, Bukhara, Khiva. Kota-kota kuno dengan sejarah kaya dan arsitektur menakjubkan.",
                 title: "Uzbekistan - Mutiara Jalur Sutra",
                 subtitle: "Jelajahi kota-kota Jalur Sutra kuno dengan arsitektur Islam yang menakjubkan dan sejarah kaya",
@@ -671,6 +769,54 @@ const translations = {
                 duration: "9 hari / 8 malam",
                 groupSize: "Hingga 14 orang",
                 location: "Uzbekistan"
+            },
+            georgia: {
+                pageTitle: "Georgia - Tanah Anggur dan Gunung | SoulRoute",
+                metaDescription: "Temukan Georgia - Tbilisi, Kazbegi, gereja kuno dan keramahtamahan legendaris. Di mana Eropa bertemu Asia.",
+                title: "Georgia - Tanah Anggur dan Gunung",
+                subtitle: "Rasakan tradisi kuno, pemandangan gunung menakjubkan, dan tempat lahirnya anggur",
+                overview: "Georgia, di persimpangan Eropa dan Asia, adalah tanah dengan gunung menakjubkan, gereja kuno, dan keramahtamahan legendaris. Dari jalan-jalan berwarna Tbilisi hingga puncak bersalju Kazbegi, negara ini menawarkan perpaduan unik sejarah, budaya, dan keindahan alam. Tur 7 hari ini mengungkap jiwa Kaukasus.",
+                highlight1: "Tbilisi - ibu kota dengan pemandian belerang",
+                highlight2: "Kazbegi dan Gereja Trinity Gergeti",
+                highlight3: "Mtskheta - ibu kota kuno dan situs UNESCO",
+                highlight4: "Wilayah anggur Kakheti",
+                highlight5: "Katedral Svetitskhoveli",
+                highlight6: "Pesta tradisional Georgia (supra)",
+                duration: "7 hari / 6 malam",
+                groupSize: "Hingga 12 orang",
+                location: "Georgia"
+            },
+            azerbaijan: {
+                pageTitle: "Azerbaijan - Tanah Api | SoulRoute",
+                metaDescription: "Temukan Azerbaijan - Baku, gunung berlumpur, Kota Tua. Arsitektur modern dan kuil api kuno.",
+                title: "Azerbaijan - Tanah Api",
+                subtitle: "Jelajahi kontras Baku futuristik dan tradisi penyembahan api kuno",
+                overview: "Azerbaijan, Tanah Api, memukau dengan kontras dramatis antara Baku ultra-modern dan tradisi kuno. Dari menara api yang menghadap Laut Kaspia hingga gunung berlumpur Gobustan dan Kota Tua bertembok, negara ini menawarkan perjalanan menarik. Tur 6 hari ini menampilkan yang terbaik dari Azerbaijan.",
+                highlight1: "Kota Tua Baku (Icherisheher) - situs UNESCO",
+                highlight2: "Flame Towers dan cakrawala modern",
+                highlight3: "Seni batu Gobustan dan gunung berlumpur",
+                highlight4: "Kuil Api Ateshgah",
+                highlight5: "Pusat Heydar Aliyev",
+                highlight6: "Boulevard Laut Kaspia",
+                duration: "6 hari / 5 malam",
+                groupSize: "Hingga 12 orang",
+                location: "Azerbaijan"
+            },
+            armenia: {
+                pageTitle: "Armenia - Buaian Kristianitas | SoulRoute",
+                metaDescription: "Temukan Armenia - Yerevan, Danau Sevan, biara kuno. Salah satu peradaban tertua di dunia.",
+                title: "Armenia - Buaian Kristianitas",
+                subtitle: "Jelajahi salah satu peradaban tertua di dunia dengan biara kuno dan danau pegunungan",
+                overview: "Armenia, salah satu bangsa tertua di dunia, adalah harta karun biara kuno, lanskap dramatis, dan warisan budaya yang kaya. Dari ibu kota Yerevan yang vibrant hingga Danau Sevan yang tenang dan Biara Tatev legendaris, negara ini menawarkan keindahan sejarah dan alam yang mendalam. Tur 6 hari ini menjelajahi jantung Kaukasus Selatan.",
+                highlight1: "Yerevan - ibu kota kota pink",
+                highlight2: "Danau Sevan dan Biara Sevanavank",
+                highlight3: "Biara Tatev dan Wings of Tatev",
+                highlight4: "Kuil Garni - monumen Helenistik",
+                highlight5: "Biara Geghard - diukir di batu",
+                highlight6: "Pencicipan brandy Armenia",
+                duration: "6 hari / 5 malam",
+                groupSize: "Hingga 12 orang",
+                location: "Armenia"
             }
         }
     }
@@ -785,27 +931,71 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
+    if (!hamburger || !navMenu) return;
 
-    // Toggle mobile menu
-    hamburger.addEventListener('click', function() {
+    const navDropdown = document.querySelector('.nav-dropdown');
+    const dropdownSubmenu = document.querySelector('.dropdown-submenu');
+    const dropdownParent = document.querySelector('.dropdown-parent');
+    const mobileMediaQuery = window.matchMedia('(max-width: 768px)');
+
+    function isMobileNav() {
+        return mobileMediaQuery.matches;
+    }
+
+    function closeMobileMenu() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.classList.remove('nav-open');
+        navDropdown?.classList.remove('open');
+        dropdownSubmenu?.classList.remove('open');
+    }
+
+    hamburger.addEventListener('click', function(event) {
+        event.stopPropagation();
+        const willOpen = !navMenu.classList.contains('active');
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        document.body.classList.toggle('nav-open', willOpen);
     });
 
-    // Close mobile menu when clicking on a link
-    navLinks.forEach(link => {
+    const toursLink = navDropdown?.querySelector(':scope > .nav-link');
+    if (toursLink) {
+        toursLink.addEventListener('click', function(event) {
+            if (!isMobileNav()) return;
+
+            event.preventDefault();
+            event.stopPropagation();
+            navDropdown.classList.toggle('open');
+        });
+    }
+
+    if (dropdownParent && dropdownSubmenu) {
+        dropdownParent.addEventListener('click', function(event) {
+            if (!isMobileNav()) return;
+
+            event.preventDefault();
+            event.stopPropagation();
+            dropdownSubmenu.classList.toggle('open');
+        });
+    }
+
+    navMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+            if (!isMobileNav()) return;
+            if (link === toursLink || link === dropdownParent) return;
+            closeMobileMenu();
         });
     });
 
-    // Close mobile menu when clicking outside
     document.addEventListener('click', function(event) {
         if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+            closeMobileMenu();
+        }
+    });
+
+    mobileMediaQuery.addEventListener('change', function() {
+        if (!mobileMediaQuery.matches) {
+            closeMobileMenu();
         }
     });
 });

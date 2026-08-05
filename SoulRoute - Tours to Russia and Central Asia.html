@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en" id="html-lang">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SoulRoute — Tours to Russia &amp; Central Asia</title>
+<meta name="description" content="Boutique small-group journeys from Indonesia to Russia, Kazakhstan, Kyrgyzstan and Uzbekistan. Local guides, honest routes, unforgettable trips.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..600&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{
+  --ink:#121A2E;
+  --ink-soft:#1C2740;
+  --paper:#F3EEE1;
+  --paper-soft:#FBF8F1;
+  --gold:#C79A3D;
+  --teal:#1E7A72;
+  --brick:#A6402F;
+  --line:rgba(18,26,46,.14);
+  --line-soft:rgba(243,238,225,.22);
+  --shadow:0 18px 40px -20px rgba(18,26,46,.35);
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}}
+body{
+  font-family:'Manrope',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.container{max-width:1180px;margin:0 auto;padding:0 28px}
+h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+.mono{font-family:'JetBrains Mono',monospace}
+.eyebrow{
+  font-family:'JetBrains Mono',monospace;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--brick);
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:14px;
+}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--brick)}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+
+/* ---------- Route dots decoration ---------- */
+.route-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.route-line .stop{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em}
+.route-line .dash{flex:0 0 26px;height:1px;background:repeating-linear-gradient(90deg,currentColor 0 5px,transparent 5px 9px);opacity:.6}
+
+/* ---------- Header ---------- */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:18px 0;
+  transition:background .35s ease, box-shadow .35s ease, padding .35s ease;
+}
+.header.scrolled{
+  background:rgba(243,238,225,.92);
+  backdrop-filter:blur(10px);
+  box-shadow:0 2px 24px rgba(18,26,46,.08);
+  padding:12px 0;
+  border-bottom:1px solid var(--line);
+}
+.nav-container{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo a{font-family:'Fraunces',serif;font-size:22px;font-weight:600;display:flex;align-items:center;gap:8px}
+.logo .dot{width:7px;height:7px;border-radius:50%;background:var(--brick);display:inline-block}
+.nav-menu{display:flex;align-items:center;gap:30px}
+.nav-link{font-size:14.5px;font-weight:600;position:relative;padding:4px 0}
+.nav-link::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--brick);transition:width .25s}
+.nav-link:hover::after{width:100%}
+.nav-dropdown{position:relative}
+.dropdown-menu{
+  position:absolute;top:130%;left:-14px;min-width:200px;
+  background:var(--paper-soft);border:1px solid var(--line);border-radius:12px;
+  box-shadow:var(--shadow);padding:8px;
+  opacity:0;visibility:hidden;transform:translateY(6px);
+  transition:.2s ease;
+}
+.nav-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown-menu li a{display:block;padding:9px 12px;border-radius:8px;font-size:14px}
+.dropdown-menu li a:hover{background:var(--paper)}
+.header-right{display:flex;align-items:center;gap:18px}
+.language-switcher{display:flex;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.lang-btn{padding:6px 13px;font-size:12px;font-family:'JetBrains Mono',monospace;letter-spacing:.05em;color:var(--ink);opacity:.55}
+.lang-btn.active{background:var(--ink);color:var(--paper-soft);opacity:1}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:6px}
+.hamburger .bar{width:22px;height:2px;background:var(--ink)}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:999px;font-weight:700;font-size:14.5px;transition:.25s}
+.btn-primary{background:var(--brick);color:#fff;box-shadow:0 10px 24px -10px rgba(166,64,47,.6)}
+.btn-primary:hover{background:#8f3324;transform:translateY(-2px)}
+.btn-secondary{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn-secondary:hover{background:var(--ink);color:var(--paper-soft)}
+.btn-outline{border:1.5px solid var(--line);padding:10px 20px;border-radius:999px;font-size:13.5px;font-weight:700;display:inline-flex;align-items:center;gap:6px}
+.btn-outline:hover{border-color:var(--ink);background:var(--ink);color:var(--paper-soft)}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;align-items:center;
+  padding:150px 0 80px;
+  background:var(--ink);
+  color:var(--paper-soft);
+  overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(1200px 600px at 85% 20%, rgba(199,154,61,.18), transparent 60%),
+    radial-gradient(900px 500px at 10% 90%, rgba(30,122,114,.22), transparent 60%);
+}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.hero-ticket-code{color:var(--gold);opacity:.9;margin-bottom:22px}
+.hero h1{font-size:clamp(38px,5vw,60px);line-height:1.05;color:#fff;margin-bottom:22px}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p.lede{font-size:17.5px;color:rgba(251,248,241,.78);max-width:480px;margin-bottom:34px}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:46px}
+.hero .btn-secondary{border-color:rgba(251,248,241,.5);color:#fff}
+.hero .btn-secondary:hover{background:#fff;color:var(--ink)}
+.hero-stats{display:flex;gap:34px;flex-wrap:wrap}
+.hero-stats div{border-left:1px solid rgba(251,248,241,.25);padding-left:14px}
+.hero-stats strong{display:block;font-family:'Fraunces',serif;font-size:26px;color:#fff}
+.hero-stats span{font-size:12.5px;color:rgba(251,248,241,.65)}
+
+.hero-visual{position:relative}
+.ticket-card{
+  position:relative;background:var(--paper-soft);color:var(--ink);
+  border-radius:22px;padding:22px;box-shadow:0 40px 80px -30px rgba(0,0,0,.55);
+  transform:rotate(2deg);
+}
+.ticket-photo{position:relative;border-radius:14px;overflow:hidden;height:300px}
+.ticket-photo img{width:100%;height:100%;object-fit:cover}
+.ticket-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,26,46,0) 40%,rgba(18,26,46,.55));}
+.ticket-photo .cap{position:absolute;left:16px;bottom:14px;color:#fff;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em}
+.ticket-perf{display:flex;align-items:center;gap:6px;margin:16px 0;color:var(--line)}
+.ticket-perf .holes{flex:1;height:0;border-top:2px dashed var(--line)}
+.ticket-route{display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace}
+.ticket-route .city{font-size:20px;font-weight:600;color:var(--ink)}
+.ticket-route .sub{font-size:10.5px;color:var(--ink);opacity:.55;letter-spacing:.08em}
+.ticket-route i{color:var(--brick)}
+.ticket-badge{
+  position:absolute;top:-16px;right:24px;background:var(--gold);color:var(--ink);
+  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.06em;
+  padding:8px 14px;border-radius:999px;transform:rotate(-4deg);box-shadow:0 10px 20px -8px rgba(0,0,0,.4);
+}
+
+/* ---------- Sections generic ---------- */
+section{padding:110px 0}
+.section-header{max-width:640px;margin-bottom:56px}
+.section-header h2{font-size:clamp(30px,4vw,42px);margin-bottom:14px}
+.section-header p{font-size:16.5px;color:#4b4433}
+.section-dark{background:var(--ink);color:var(--paper-soft)}
+.section-dark .section-header p{color:rgba(251,248,241,.7)}
+.section-dark h2{color:#fff}
+
+/* ---------- About ---------- */
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:start}
+.about-text h3{font-size:26px;margin-bottom:16px}
+.about-text p{color:#4b4433;margin-bottom:28px;max-width:520px}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.stat-row .stat{padding:20px 18px 0;border-right:1px solid var(--line)}
+.stat-row .stat:last-child{border-right:none}
+.stat-row .stat i{color:var(--teal);font-size:18px;margin-bottom:10px;display:block}
+.stat-row .stat strong{display:block;font-family:'Fraunces',serif;font-size:24px}
+.stat-row .stat span{font-size:12.5px;color:#5c5544}
+.about-photo{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/5}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+.about-photo .tag{position:absolute;left:14px;bottom:14px;background:rgba(18,26,46,.75);color:#fff;font-family:'JetBrains Mono',monospace;font-size:11px;padding:7px 12px;border-radius:999px;letter-spacing:.05em}
+
+/* ---------- Gallery strip ---------- */
+.gallery-wrap{margin-top:80px;position:relative}
+.gallery-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;scrollbar-width:none}
+.gallery-track::-webkit-scrollbar{display:none}
+.gallery-track figure{flex:0 0 300px;scroll-snap-align:start;border-radius:16px;overflow:hidden;position:relative;height:220px}
+.gallery-track img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gallery-track figure:hover img{transform:scale(1.06)}
+.gallery-track figcaption{position:absolute;left:12px;bottom:10px;color:#fff;font-family:'JetBrains Mono',monospace;font-size:11.5px;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.gallery-track figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55))}
+.gallery-nav{display:flex;gap:10px;justify-content:flex-end;margin-bottom:18px}
+.gallery-nav button{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+.gallery-nav button:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* ---------- Tours ---------- */
+.country-section{margin-bottom:64px}
+.country-title{display:flex;align-items:center;gap:12px;font-size:22px;margin-bottom:26px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.country-title i{color:var(--brick)}
+.tours-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.tour-card{
+  background:var(--paper-soft);border-radius:var(--radius);overflow:hidden;
+  border:1px solid var(--line);transition:transform .3s, box-shadow .3s;
+  display:flex;flex-direction:column;
+}
+.tour-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.tour-image{position:relative;height:180px;overflow:hidden}
+.tour-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.tour-card:hover .tour-image img{transform:scale(1.07)}
+.tour-image.pattern{background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:14px}
+.tour-image.pattern i{font-size:30px;color:rgba(255,255,255,.92)}
+.tour-badge{position:absolute;top:12px;left:12px;background:var(--gold);color:var(--ink);font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;padding:5px 11px;border-radius:999px;letter-spacing:.05em}
+.tour-content{padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.tour-content .code{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--brick);letter-spacing:.08em}
+.tour-content h4{font-size:18.5px;line-height:1.25}
+.tour-content p{font-size:14px;color:#4b4433;flex:1}
+.tour-content .btn-outline{align-self:flex-start;margin-top:6px}
+
+/* pattern backgrounds per destination */
+.pat-kazan{background:linear-gradient(135deg,#1E7A72 0%,#123f3b 100%)}
+.pat-dagestan{background:linear-gradient(135deg,#A6402F 0%,#5c1f14 100%)}
+.pat-chechnya{background:linear-gradient(135deg,#3a4a6b 0%,#121A2E 100%)}
+.pat-kazakhstan{background:linear-gradient(135deg,#C79A3D 0%,#7a5c1c 100%)}
+
+/* ---------- FAQ ---------- */
+.faq-container{max-width:760px}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-question{display:flex;justify-content:space-between;align-items:center;padding:22px 4px;cursor:pointer}
+.faq-question h4{font-size:16.5px;font-weight:600;font-family:'Manrope',sans-serif}
+.faq-question i{transition:transform .3s;color:var(--brick)}
+.faq-item.active .faq-question i{transform:rotate(180deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-answer p{padding:0 4px 22px;color:#4b4433;max-width:640px}
+.faq-item.active .faq-answer{max-height:220px}
+.faq-item .mono-idx{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--teal);margin-right:12px}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--ink);color:var(--paper-soft)}
+.contact-content{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.contact-eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.contact-subtitle{color:rgba(251,248,241,.75);max-width:440px;margin-bottom:30px}
+.contact-socials{display:flex;gap:12px;flex-wrap:wrap}
+.contact-social-link{display:flex;align-items:center;gap:9px;padding:12px 18px;border-radius:999px;border:1px solid rgba(251,248,241,.25);font-weight:700;font-size:14px}
+.contact-social-link:hover{border-color:#fff}
+.contact-social-link-primary{background:#25D366;border-color:#25D366;color:#0b2b16}
+.contact-info{display:flex;flex-direction:column;gap:22px}
+.contact-item{display:flex;gap:16px;align-items:flex-start;padding-bottom:20px;border-bottom:1px solid rgba(251,248,241,.15)}
+.contact-item i{color:var(--gold);font-size:18px;margin-top:3px}
+.contact-item h4{font-size:13px;color:rgba(251,248,241,.55);font-family:'JetBrains Mono',monospace;letter-spacing:.06em;font-weight:600;margin-bottom:4px}
+.contact-item p{color:#fff;font-size:15.5px}
+
+/* ---------- Footer ---------- */
+.footer{background:#0B1120;color:rgba(251,248,241,.75);padding:64px 0 26px}
+.footer-content{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-section h3{color:#fff;margin-bottom:12px}
+.footer-section h4{font-size:13px;color:rgba(251,248,241,.55);font-family:'JetBrains Mono',monospace;letter-spacing:.06em;margin-bottom:14px}
+.footer-section ul li{margin-bottom:9px}
+.footer-section ul li a:hover{color:#fff}
+.footer-section p{margin-bottom:6px;font-size:14.5px}
+.footer-bottom{border-top:1px solid rgba(251,248,241,.12);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px}
+
+/* ---------- Floating buttons ---------- */
+.floating-whatsapp{
+  position:fixed;bottom:24px;right:24px;z-index:900;
+  width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:26px;
+  box-shadow:0 12px 26px -8px rgba(37,211,102,.6);
+}
+.back-to-top{
+  position:fixed;bottom:24px;right:92px;z-index:900;
+  width:48px;height:48px;border-radius:50%;background:var(--ink);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 12px 26px -10px rgba(18,26,46,.5);
+  opacity:0;visibility:hidden;transition:.3s;
+}
+.back-to-top.show{opacity:1;visibility:visible}
+
+/* ---------- Reveal ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+/* ---------- Responsive ---------- */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-visual{order:-1}
+  .about-grid{grid-template-columns:1fr}
+  .contact-content{grid-template-columns:1fr}
+  .footer-content{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .nav-menu{position:fixed;top:0;right:0;height:100vh;width:78%;max-width:320px;background:var(--paper-soft);flex-direction:column;justify-content:flex-start;padding:110px 30px;gap:22px;transform:translateX(100%);transition:.35s;box-shadow:-10px 0 40px rgba(0,0,0,.15)}
+  .nav-menu.open{transform:translateX(0)}
+  .hamburger{display:flex}
+  .header-right .language-switcher{display:flex}
+  .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;display:none;margin-top:8px}
+  .nav-dropdown.open .dropdown-menu{display:block}
+  section{padding:76px 0}
+  .stat-row{grid-template-columns:1fr}
+  .stat-row .stat{border-right:none;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:16px}
+  .footer-content{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="header" id="siteHeader">
+  <nav class="container nav-container">
+    <div class="logo"><a href="#home"><span class="dot"></span>SoulRoute</a></div>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home" class="nav-link" data-i18n="nav.home">Home</a></li>
+      <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+      <li class="nav-dropdown">
+        <a href="#tours" class="nav-link dropdown-toggle" data-i18n="nav.tours">Tours</a>
+        <ul class="dropdown-menu">
+          <li><a href="#tours" data-i18n="tours.moscow.title2">Moscow</a></li>
+          <li><a href="#tours" data-i18n="tours.petersburg.title2">St. Petersburg</a></li>
+          <li><a href="#tours" data-i18n="tours.kazan.title2">Kazan</a></li>
+          <li><a href="#tours" data-i18n="tours.murmansk.title2">Murmansk</a></li>
+          <li><a href="#tours" data-i18n="tours.baikal.title2">Irkutsk &amp; Baikal</a></li>
+          <li><a href="#tours" data-i18n="tours.dagestan.title2">Dagestan</a></li>
+          <li><a href="#tours" data-i18n="tours.chechnya.title2">Chechnya</a></li>
+          <li><a href="#tours" data-i18n="tours.kazakhstan.country">Kazakhstan</a></li>
+          <li><a href="#tours" data-i18n="tours.kyrgyzstan.country">Kyrgyzstan</a></li>
+          <li><a href="#tours" data-i18n="tours.uzbekistan.country">Uzbekistan</a></li>
+        </ul>
+      </li>
+      <li><a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a></li>
+      <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="header-right">
+      <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="id">ID</button>
+      </div>
+      <div class="hamburger" id="hamburger" role="button" aria-label="Menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <div class="route-line hero-ticket-code mono">
+        <span class="stop">JKT</span><span class="dash"></span>
+        <span class="stop">MOW</span><span class="dash"></span>
+        <span class="stop">OVB</span><span class="dash"></span>
+        <span class="stop">SKD</span>
+      </div>
+      <h1 data-i18n="hero.title">Discover Russia &amp; <em>Central Asia</em>, one honest route at a time</h1>
+      <p class="lede" data-i18n="hero.description">Small-group journeys from Indonesia, planned by people who've actually walked these routes. From Red Square to the Registan — your trip starts here.</p>
+      <div class="hero-buttons">
+        <a href="#tours" class="btn btn-primary"><span data-i18n="hero.chooseTour">Choose a tour</span> <i class="fas fa-arrow-right"></i></a>
+        <a href="#about" class="btn btn-secondary" data-i18n="hero.learnMore">Learn more</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>100+</strong><span data-i18n="about.tours">Tours completed</span></div>
+        <div><strong>2000+</strong><span data-i18n="about.tourists">Happy travelers</span></div>
+        <div><strong>4.9/5</strong><span data-i18n="about.rating">Average rating</span></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="ticket-card">
+        <span class="ticket-badge mono" data-i18n="hero.badge">SINCE 2018</span>
+        <div class="ticket-photo">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Basil's%20Cathedral,%20Red%20Square,%20Moscow,%20Russia.jpg" alt="Saint Basil's Cathedral, Red Square, Moscow" loading="lazy">
+          <span class="cap mono">MOSCOW · RED SQUARE</span>
+        </div>
+        <div class="ticket-perf"><div class="holes"></div><i class="fas fa-route"></i><div class="holes"></div></div>
+        <div class="ticket-route">
+          <div><div class="city">JKT</div><div class="sub">JAKARTA</div></div>
+          <i class="fas fa-plane"></i>
+          <div><div class="city">MOW</div><div class="sub" data-i18n="hero.ticketSub">DEPARTS WITH YOU</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <div class="eyebrow" data-i18n="about.eyebrow">About SoulRoute</div>
+        <h3 data-i18n="about.greeting">We plan the trip. You just get on the plane.</h3>
+        <p data-i18n="about.description">We started from a simple love of these places. Since 2018 we've been organizing trips from Indonesia to Russia and Central Asia — over 100 group departures, and a growing list of trusted local partners. We handle visas, guides and logistics; you handle the deciding where to point your camera. We also arrange private tours and work directly with tour operators interested in these routes.</p>
+        <div class="stat-row">
+          <div class="stat"><i class="fas fa-route"></i><strong>100+</strong><span data-i18n="about.tours">Tours completed</span></div>
+          <div class="stat"><i class="fas fa-users"></i><strong>2000+</strong><span data-i18n="about.tourists">Happy travelers</span></div>
+          <div class="stat"><i class="fas fa-star"></i><strong>4.9/5</strong><span data-i18n="about.rating">Average rating</span></div>
+        </div>
+      </div>
+      <div class="about-photo reveal">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Baikal,%20Cape%20Burhan,%20Olkhon%20Island,%20Lake%20Baikal,%20Russia.jpg" alt="Cape Burhan, Olkhon Island, Lake Baikal" loading="lazy">
+        <span class="tag mono" data-i18n="about.photoTag">LAKE BAIKAL, SIBERIA</span>
+      </div>
+    </div>
+
+    <div class="gallery-wrap">
+      <div class="gallery-nav">
+        <button id="galPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+        <button id="galNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="gallery-track" id="galleryTrack">
+        <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Peterhof%20Palace,%20Saint%20Petersburg,%20Russia%20(44408938295).jpg" alt="Peterhof Palace, Saint Petersburg" loading="lazy"><figcaption class="mono">ST. PETERSBURG</figcaption></figure>
+        <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Registan%20Samarkand%20Uzbekistan.JPG" alt="Registan, Samarkand" loading="lazy"><figcaption class="mono">SAMARKAND</figcaption></figure>
+        <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lake%20Issyk-Kul,%20Kyrgyzstan.jpg" alt="Lake Issyk-Kul, Kyrgyzstan" loading="lazy"><figcaption class="mono">ISSYK-KUL</figcaption></figure>
+        <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aurora%20in%20Russia.jpg" alt="Aurora borealis in Russia" loading="lazy"><figcaption class="mono">MURMANSK</figcaption></figure>
+        <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Basil's%20Cathedral,%20Red%20Square,%20Moscow,%20Russia.jpg" alt="Red Square, Moscow" loading="lazy"><figcaption class="mono">MOSCOW</figcaption></figure>
+        <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Baikal,%20Cape%20Burhan,%20Olkhon%20Island,%20Lake%20Baikal,%20Russia.jpg" alt="Lake Baikal" loading="lazy"><figcaption class="mono">LAKE BAIKAL</figcaption></figure>
+      </div>
+      <p style="max-width:640px;color:#4b4433;margin-top:22px" data-i18n="gallery.text">We've run group trips from Indonesia to Russia since 2018 — over 100 departures and a growing circle of trusted partners. Real experience, honest itineraries, and travel that stays safe and comfortable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TOURS -->
+<section id="tours" class="section-dark">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow" style="color:var(--gold)" data-i18n="tours.eyebrow">Where we go</div>
+      <h2 data-i18n="tours.title">Our tours</h2>
+      <p data-i18n="tours.subtitle">Ten routes across two regions. Pick a destination — we'll build the rest.</p>
+    </div>
+
+    <div class="country-section">
+      <h3 class="country-title"><i class="fas fa-flag"></i><span data-i18n="tours.russia">Russia</span></h3>
+      <div class="tours-grid">
+
+        <div class="tour-card reveal">
+          <div class="tour-image"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Basil's%20Cathedral,%20Red%20Square,%20Moscow,%20Russia.jpg" alt="Moscow" loading="lazy"><span class="tour-badge" data-i18n="tours.popular">Popular</span></div>
+          <div class="tour-content">
+            <span class="code mono">RU · MOW</span>
+            <h4 data-i18n="tours.moscow.title">Moscow — Heart of Russia</h4>
+            <p data-i18n="tours.moscow.description">Red Square, the Kremlin, the Tretyakov Gallery, and more. History and culture, right in the capital.</p>
+            <a href="#contact" class="btn-outline" data-i18n="tours.learnMore">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="tour-card reveal">
+          <div class="tour-image"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Peterhof%20Palace,%20Saint%20Petersburg,%20Russia%20(44408938295).jpg" alt="St. Petersburg" loading="lazy"></div>
+          <div class="tour-content">
+            <span class="code mono">RU · LED</span>
+            <h4 data-i18n="tours.petersburg.title">St. Petersburg — Cultural Capital</h4>
+            <p data-i18n="tours.petersburg.description">The Hermitage, Peterhof, white nights. The romantic pull of the Northern Venice.</p>
+            <a href="#contact" class="btn-outline" data-i18n="tours.learnMore">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="tour-card reveal">
+          <div class="tour-image pattern pat-kazan"><i class="fas fa-mosque"></i></div>
+          <div class="tour-content">
+            <span class="code mono">RU · KZN</span>
+            <h4 data-i18n="tours.kazan.title">Kazan — City of Contrasts</h4>
+            <p data-i18n="tours.kazan.description">The Kul Sharif Mosque, Kazan Kremlin, a thousand years of history — a unique fusion of cultures.</p>
+            <a href="#contact" class="btn-outline" data-i18n="tours.learnMore">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="tour-card reveal">
+          <div class="tour-image"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aurora%20in%20Russia.jpg" alt="Murmansk aurora" loading="lazy"></div>
+          <div class="tour-content">
+            <span class="code mono">RU · MMK</span>
+            <h4 data-i18n="tours.murmansk.title">Murmansk — Land of the Northern Lights</h4>
+            <p data-i18n="tours.murmansk.description">Aurora borealis, the Arctic coast, a nuclear icebreaker up close. A true polar expedition.</p>
+            <a href="#contact" class="btn-outline" data-i18n="tours.learnMore">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="tour-card reveal">
+          <div class="tour-image"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Baikal,%20Cape%20Burhan,%20Olkhon%20Island,%20Lake%20Baikal,%20Russia.jpg" alt="Lake Baikal" loading="lazy"></div>
+          <div class="tour-content">
+            <span class="code mono">RU · IKT</span>
+            <h4 data-i18n="tours.baikal.title">Irkutsk — Gateway to Lake Baikal</h4>
+            <p data-i18n="tours.baikal.description">Siberian charm, wooden architecture, and Baikal close by — history, nature and real winter atmosphere.</p>
+            <a href="#contact" class="btn-outline" data-i18n="tours.learnMore">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="tour-card reveal">
+          <div class="tour-image pattern pat-dagestan"><i class="fas fa-mountain"></i></div>
+          <div class="tour-content">
+            <span class="code mono">RU · DGS</span>
+            <h4 data-i18n="tours.dagestan.title">Dagestan — Land of Mountains</h4>
+            <p data-i18n="tours.dagestan.description">Ancient auls clinging to cliffsides, Caucasus peaks, and hospitality that's hard to describe until you've felt it.</p>
+            <a href="#contact" class="btn-outline" data-i18n="tours.learnMore">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="tour-card reveal">
+          <div class="tour-image pattern pat-chechnya"><i class="fas fa-building"></i></div>
+          <div class="tour-content">
+            <span class="code mono">RU · CHN</span>
+            <h4 data-i18n="tours.chechnya.title">Chechnya — A New Face</h4>
+            <p data-i18n="tours.chechnya.description">Grozny's modern skyline, the Caucasus foothills, and a culture proud to show you around.</p>
+            <a href="#contact" class="btn-outline" data-i18n="tours.learnMore">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="country-section">
+      <h3 class="country-title"><i class="fas fa-flag"></i><span data-i18n="tours.centralAsia">Central Asia</span></h3>
+      <div class="tours-grid">
+
+        <div class="tour-card reveal">
+          <div class="tour-image pattern pat-kazakhstan"><i class="fas fa-city"></i></div>
+          <div class="tour-content">
+            <span class="code mono">KZ · ALA</span>
+            <h4 data-i18n="tours.kazakhstan.title">Kazakhstan — Steppe and Skyline</h4>
+            <p data-i18n="tours.kazakhstan.description">Almaty's mountains, Astana's futuristic towers, and the endless steppe in between.</p>
+            <a href="#contact" class="btn-outline" data-i18n="tours.learnMore">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="tour-card reveal">
+          <div class="tour-image"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lake%20Issyk-Kul,%20Kyrgyzstan.jpg" alt="Kyrgyzstan" loading="lazy"></div>
+          <div class="tour-content">
+            <span class="code mono">KG · FRU</span>
+            <h4 data-i18n="tours.kyrgyzstan.title">Kyrgyzstan — Land of Heavenly Mountains</h4>
+            <p data-i18n="tours.kyrgyzstan.description">Issyk-Kul, Bishkek, and living nomadic culture. Natural beauty paired with ancient tradition.</p>
+            <a href="#contact" class="btn-outline" data-i18n="tours.learnMore">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="tour-card reveal">
+          <div class="tour-image"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Registan%20Samarkand%20Uzbekistan.JPG" alt="Uzbekistan" loading="lazy"><span class="tour-badge" data-i18n="tours.popular">Popular</span></div>
+          <div class="tour-content">
+            <span class="code mono">UZ · SKD</span>
+            <h4 data-i18n="tours.uzbekistan.title">Uzbekistan — Pearl of the Silk Road</h4>
+            <p data-i18n="tours.uzbekistan.description">Samarkand, Bukhara, Khiva. Ancient cities, rich history, and architecture unlike anywhere else.</p>
+            <a href="#contact" class="btn-outline" data-i18n="tours.learnMore">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow" data-i18n="faq.eyebrow">Good to know</div>
+      <h2 data-i18n="faq.title">Frequently asked questions</h2>
+      <p data-i18n="faq.subtitle">Everything you need to know before booking.</p>
+    </div>
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question"><h4><span class="mono-idx">01</span><span data-i18n="faq.q1.question">Do you process visas?</span></h4><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer"><p data-i18n="faq.q1.answer">Yes — we can assist with the full visa process for the routes we run.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><h4><span class="mono-idx">02</span><span data-i18n="faq.q2.question">Are meals included in the tour?</span></h4><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer"><p data-i18n="faq.q2.answer">We can organize meals throughout the trip on request — just let us know when booking.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><h4><span class="mono-idx">03</span><span data-i18n="faq.q3.question">What documents do I need for the trip?</span></h4><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer"><p data-i18n="faq.q3.answer">For Russia tours: a valid passport. For Central Asia: an international passport valid for at least 6 months, plus a visa if required. We'll help prepare everything.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><h4><span class="mono-idx">04</span><span data-i18n="faq.q4.question">Can the itinerary be changed?</span></h4><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer"><p data-i18n="faq.q4.answer">Always. Tell us what you're after and we'll adapt the program to fit your interests and pace.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><h4><span class="mono-idx">05</span><span data-i18n="faq.q5.question">What happens if the weather turns bad?</span></h4><i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer"><p data-i18n="faq.q5.answer">We always keep a backup plan — museums, covered attractions, or a route better suited to the conditions.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-i18n="contact.title">Ready for your next journey?</h2>
+      <p data-i18n="contact.subtitle">We'll help you pick the right tour and answer every question along the way.</p>
+    </div>
+    <div class="contact-content">
+      <div class="contact-copy">
+        <p class="contact-eyebrow" data-i18n="contact.eyebrow">Get in touch</p>
+        <p class="contact-subtitle" data-i18n="contact.description">Pick whichever channel is easiest for you. We speak English and Indonesian and we're glad to help plan your trip.</p>
+        <div class="contact-socials">
+          <a href="https://wa.me/79773259914?text=Halo,%20saya%20ingin%20mengetahui%20informasi%20tentang%20tur%20ini." target="_blank" rel="noopener noreferrer" class="contact-social-link contact-social-link-primary"><i class="fab fa-whatsapp"></i><span data-i18n="contact.social.whatsapp">WhatsApp</span></a>
+          <a href="https://t.me/your_telegram_username" target="_blank" rel="noopener noreferrer" class="contact-social-link"><i class="fab fa-telegram-plane"></i><span data-i18n="contact.social.telegram">Telegram</span></a>
+          <a href="https://www.instagram.com/susanvladimir/" target="_blank" rel="noopener noreferrer" class="contact-social-link"><i class="fab fa-instagram"></i><span data-i18n="contact.social.instagram">Instagram</span></a>
+        </div>
+      </div>
+      <div class="contact-info">
+        <div class="contact-item"><i class="fas fa-phone"></i><div><h4 data-i18n="contact.phone">Phone</h4><p>+62 882-9919-4796</p></div></div>
+        <div class="contact-item"><i class="fas fa-envelope"></i><div><h4 data-i18n="contact.email">Email</h4><p>susanvladimir.tour@gmail.com</p></div></div>
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><h4 data-i18n="contact.address">Address</h4><p data-i18n="contact.addressValue">Moscow, Saltykovskaya Street 11, Office 1</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>SoulRoute</h3>
+        <p data-i18n="footer.description">Boutique tours to Russia and Central Asia, planned for travelers from Indonesia.</p>
+      </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.destinations">Destinations</h4>
+        <ul>
+          <li><a href="#tours" data-i18n="tours.russia">Russia</a></li>
+          <li><a href="#tours" data-i18n="tours.kazakhstan.country">Kazakhstan</a></li>
+          <li><a href="#tours" data-i18n="tours.kyrgyzstan.country">Kyrgyzstan</a></li>
+          <li><a href="#tours" data-i18n="tours.uzbekistan.country">Uzbekistan</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 data-i18n="footer.contacts">Contacts</h4>
+        <p>+62 882-9919-4796</p>
+        <p>susanvladimir.tour@gmail.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copyright">© 2026 SoulRoute. All rights reserved.</p>
+      <p data-i18n="footer.credits">Photography via Wikimedia Commons contributors.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/79773259914?text=Halo,%20saya%20ingin%20mengetahui%20informasi%20tentang%20tur%20ini." target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Contact us on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+/* ---------- Translations ---------- */
+const translations = {
+  en: {
+    "nav.home":"Home","nav.about":"About","nav.tours":"Tours","nav.faq":"FAQ","nav.contact":"Contact",
+    "hero.title":"Discover Russia &amp; <em>Central Asia</em>, one honest route at a time",
+    "hero.description":"Small-group journeys from Indonesia, planned by people who've actually walked these routes. From Red Square to the Registan — your trip starts here.",
+    "hero.chooseTour":"Choose a tour","hero.learnMore":"Learn more","hero.badge":"SINCE 2018","hero.ticketSub":"DEPARTS WITH YOU",
+    "about.eyebrow":"About SoulRoute",
+    "about.greeting":"We plan the trip. You just get on the plane.",
+    "about.description":"We started from a simple love of these places. Since 2018 we've been organizing trips from Indonesia to Russia and Central Asia — over 100 group departures, and a growing list of trusted local partners. We handle visas, guides and logistics; you handle deciding where to point your camera. We also arrange private tours and work directly with tour operators interested in these routes.",
+    "about.tours":"Tours completed","about.tourists":"Happy travelers","about.rating":"Average rating","about.photoTag":"LAKE BAIKAL, SIBERIA",
+    "gallery.text":"We've run group trips from Indonesia to Russia since 2018 — over 100 departures and a growing circle of trusted partners. Real experience, honest itineraries, and travel that stays safe and comfortable.",
+    "tours.eyebrow":"Where we go","tours.title":"Our tours","tours.subtitle":"Ten routes across two regions. Pick a destination — we'll build the rest.",
+    "tours.russia":"Russia","tours.centralAsia":"Central Asia","tours.popular":"Popular","tours.learnMore":"Learn more",
+    "tours.moscow.title":"Moscow — Heart of Russia","tours.moscow.description":"Red Square, the Kremlin, the Tretyakov Gallery, and more. History and culture, right in the capital.","tours.moscow.title2":"Moscow",
+    "tours.petersburg.title":"St. Petersburg — Cultural Capital","tours.petersburg.description":"The Hermitage, Peterhof, white nights. The romantic pull of the Northern Venice.","tours.petersburg.title2":"St. Petersburg",
+    "tours.kazan.title":"Kazan — City of Contrasts","tours.kazan.description":"The Kul Sharif Mosque, Kazan Kremlin, a thousand years of history — a unique fusion of cultures.","tours.kazan.title2":"Kazan",
+    "tours.murmansk.title":"Murmansk — Land of the Northern Lights","tours.murmansk.description":"Aurora borealis, the Arctic coast, a nuclear icebreaker up close. A true polar expedition.","tours.murmansk.title2":"Murmansk",
+    "tours.baikal.title":"Irkutsk — Gateway to Lake Baikal","tours.baikal.description":"Siberian charm, wooden architecture, and Baikal close by — history, nature and real winter atmosphere.","tours.baikal.title2":"Irkutsk & Baikal",
+    "tours.dagestan.title":"Dagestan — Land of Mountains","tours.dagestan.description":"Ancient auls clinging to cliffsides, Caucasus peaks, and hospitality that's hard to describe until you've felt it.","tours.dagestan.title2":"Dagestan",
+    "tours.chechnya.title":"Chechnya — A New Face","tours.chechnya.description":"Grozny's modern skyline, the Caucasus foothills, and a culture proud to show you around.","tours.chechnya.title2":"Chechnya",
+    "tours.kazakhstan.title":"Kazakhstan — Steppe and Skyline","tours.kazakhstan.description":"Almaty's mountains, Astana's futuristic towers, and the endless steppe in between.","tours.kazakhstan.country":"Kazakhstan",
+    "tours.kyrgyzstan.title":"Kyrgyzstan — Land of Heavenly Mountains","tours.kyrgyzstan.description":"Issyk-Kul, Bishkek, and living nomadic culture. Natural beauty paired with ancient tradition.","tours.kyrgyzstan.country":"Kyrgyzstan",
+    "tours.uzbekistan.title":"Uzbekistan — Pearl of the Silk Road","tours.uzbekistan.description":"Samarkand, Bukhara, Khiva. Ancient cities, rich history, and architecture unlike anywhere else.","tours.uzbekistan.country":"Uzbekistan",
+    "faq.eyebrow":"Good to know","faq.title":"Frequently asked questions","faq.subtitle":"Everything you need to know before booking.",
+    "faq.q1.question":"Do you process visas?","faq.q1.answer":"Yes — we can assist with the full visa process for the routes we run.",
+    "faq.q2.question":"Are meals included in the tour?","faq.q2.answer":"We can organize meals throughout the trip on request — just let us know when booking.",
+    "faq.q3.question":"What documents do I need for the trip?","faq.q3.answer":"For Russia tours: a valid passport. For Central Asia: an international passport valid for at least 6 months, plus a visa if required. We'll help prepare everything.",
+    "faq.q4.question":"Can the itinerary be changed?","faq.q4.answer":"Always. Tell us what you're after and we'll adapt the program to fit your interests and pace.",
+    "faq.q5.question":"What happens if the weather turns bad?","faq.q5.answer":"We always keep a backup plan — museums, covered attractions, or a route better suited to the conditions.",
+    "contact.title":"Ready for your next journey?","contact.subtitle":"We'll help you pick the right tour and answer every question along the way.",
+    "contact.eyebrow":"Get in touch","contact.description":"Pick whichever channel is easiest for you. We speak English and Indonesian and we're glad to help plan your trip.",
+    "contact.social.whatsapp":"WhatsApp","contact.social.telegram":"Telegram","contact.social.instagram":"Instagram",
+    "contact.phone":"Phone","contact.email":"Email","contact.address":"Address","contact.addressValue":"Moscow, Saltykovskaya Street 11, Office 1",
+    "footer.description":"Boutique tours to Russia and Central Asia, planned for travelers from Indonesia.",
+    "footer.destinations":"Destinations","footer.contacts":"Contacts","footer.copyright":"© 2026 SoulRoute. All rights reserved.","footer.credits":"Photography via Wikimedia Commons contributors."
+  },
+  id: {
+    "nav.home":"Beranda","nav.about":"Tentang","nav.tours":"Tur","nav.faq":"FAQ","nav.contact":"Kontak",
+    "hero.title":"Jelajahi Rusia &amp; <em>Asia Tengah</em>, satu rute jujur pada satu waktu",
+    "hero.description":"Perjalanan grup kecil dari Indonesia, disusun oleh tim yang benar-benar pernah menempuh rute ini. Dari Lapangan Merah hingga Registan — perjalananmu dimulai di sini.",
+    "hero.chooseTour":"Pilih Tur","hero.learnMore":"Selengkapnya","hero.badge":"SEJAK 2018","hero.ticketSub":"BERANGKAT BERSAMAMU",
+    "about.eyebrow":"Tentang SoulRoute",
+    "about.greeting":"Kami yang menyusun perjalanan. Kamu tinggal naik pesawat.",
+    "about.description":"Semua berawal dari kecintaan kami pada tempat-tempat ini. Sejak 2018 kami menyelenggarakan perjalanan dari Indonesia ke Rusia dan Asia Tengah — lebih dari 100 keberangkatan grup, dan daftar mitra lokal tepercaya yang terus bertambah. Kami mengurus visa, pemandu, dan logistik; kamu tinggal memutuskan ke mana mengarahkan kamera. Kami juga melayani tur privat dan bekerja sama langsung dengan operator tur yang tertarik pada rute-rute ini.",
+    "about.tours":"Tur terselenggara","about.tourists":"Wisatawan puas","about.rating":"Rating rata-rata","about.photoTag":"DANAU BAIKAL, SIBERIA",
+    "gallery.text":"Kami telah menjalankan perjalanan grup dari Indonesia ke Rusia sejak 2018 — lebih dari 100 keberangkatan dan lingkaran mitra tepercaya yang terus berkembang. Pengalaman nyata, itinerary jujur, dan perjalanan yang tetap aman dan nyaman.",
+    "tours.eyebrow":"Ke mana kami pergi","tours.title":"Tur Kami","tours.subtitle":"Sepuluh rute di dua kawasan. Pilih destinasi — sisanya biar kami yang susun.",
+    "tours.russia":"Rusia","tours.centralAsia":"Asia Tengah","tours.popular":"Populer","tours.learnMore":"Selengkapnya",
+    "tours.moscow.title":"Moskow — Jantung Rusia","tours.moscow.description":"Lapangan Merah, Kremlin, Galeri Tretyakov, dan masih banyak lagi. Sejarah dan budaya, langsung di ibu kota.","tours.moscow.title2":"Moskow",
+    "tours.petersburg.title":"St. Petersburg — Ibu Kota Budaya","tours.petersburg.description":"Hermitage, Peterhof, white nights. Pesona romantis dari Venesia-nya Utara.","tours.petersburg.title2":"St. Petersburg",
+    "tours.kazan.title":"Kazan — Kota Penuh Kontras","tours.kazan.description":"Masjid Kul Sharif, Kremlin Kazan, seribu tahun sejarah — perpaduan budaya yang unik.","tours.kazan.title2":"Kazan",
+    "tours.murmansk.title":"Murmansk — Negeri Aurora","tours.murmansk.description":"Aurora borealis, pesisir Arktik, hingga kapal pemecah es nuklir dari dekat. Ekspedisi kutub yang sesungguhnya.","tours.murmansk.title2":"Murmansk",
+    "tours.baikal.title":"Irkutsk — Gerbang Danau Baikal","tours.baikal.description":"Pesona Siberia, arsitektur kayu, dan Baikal yang tak jauh — sejarah, alam, dan suasana musim dingin yang sesungguhnya.","tours.baikal.title2":"Irkutsk & Baikal",
+    "tours.dagestan.title":"Dagestan — Negeri Pegunungan","tours.dagestan.description":"Desa-desa kuno di tebing curam, puncak Kaukasus, dan keramahan yang sulit dijelaskan sebelum kamu rasakan sendiri.","tours.dagestan.title2":"Dagestan",
+    "tours.chechnya.title":"Chechnya — Wajah Baru","tours.chechnya.description":"Skyline modern Grozny, kaki pegunungan Kaukasus, dan budaya yang bangga menyambutmu.","tours.chechnya.title2":"Chechnya",
+    "tours.kazakhstan.title":"Kazakhstan — Stepa dan Skyline","tours.kazakhstan.description":"Pegunungan Almaty, menara futuristik Astana, dan stepa tanpa batas di antaranya.","tours.kazakhstan.country":"Kazakhstan",
+    "tours.kyrgyzstan.title":"Kyrgyzstan — Negeri Pegunungan Langit","tours.kyrgyzstan.description":"Issyk-Kul, Bishkek, dan budaya nomaden yang masih hidup. Keindahan alam berpadu tradisi kuno.","tours.kyrgyzstan.country":"Kyrgyzstan",
+    "tours.uzbekistan.title":"Uzbekistan — Mutiara Jalur Sutra","tours.uzbekistan.description":"Samarkand, Bukhara, Khiva. Kota-kota kuno, sejarah kaya, dan arsitektur yang tak ada duanya.","tours.uzbekistan.country":"Uzbekistan",
+    "faq.eyebrow":"Perlu diketahui","faq.title":"Pertanyaan yang Sering Diajukan","faq.subtitle":"Semua yang perlu kamu tahu sebelum memesan.",
+    "faq.q1.question":"Apakah kalian mengurus visa?","faq.q1.answer":"Ya — kami bisa membantu seluruh proses visa untuk rute yang kami jalankan.",
+    "faq.q2.question":"Apakah makan termasuk dalam tur?","faq.q2.answer":"Kami bisa mengatur makan selama perjalanan sesuai permintaan — sampaikan saat pemesanan.",
+    "faq.q3.question":"Dokumen apa yang saya butuhkan untuk perjalanan?","faq.q3.answer":"Untuk tur Rusia: paspor yang berlaku. Untuk Asia Tengah: paspor internasional berlaku minimal 6 bulan, plus visa bila diperlukan. Kami bantu siapkan semuanya.",
+    "faq.q4.question":"Bisakah itinerary diubah?","faq.q4.answer":"Tentu bisa. Ceritakan apa yang kamu inginkan, dan kami sesuaikan program dengan minat serta ritmemu.",
+    "faq.q5.question":"Bagaimana jika cuaca buruk?","faq.q5.answer":"Kami selalu punya rencana cadangan — museum, atraksi indoor, atau rute yang lebih sesuai dengan kondisi saat itu.",
+    "contact.title":"Siap untuk perjalanan berikutnya?","contact.subtitle":"Kami bantu pilih tur yang tepat dan jawab semua pertanyaanmu.",
+    "contact.eyebrow":"Hubungi Kami","contact.description":"Pilih saluran yang paling mudah untukmu. Kami berbahasa Inggris dan Indonesia, dan siap bantu rencanakan perjalananmu.",
+    "contact.social.whatsapp":"WhatsApp","contact.social.telegram":"Telegram","contact.social.instagram":"Instagram",
+    "contact.phone":"Telepon","contact.email":"Email","contact.address":"Alamat","contact.addressValue":"Moskow, Jalan Saltykovskaya 11, Kantor 1",
+    "footer.description":"Tur butik ke Rusia dan Asia Tengah, dirancang untuk wisatawan dari Indonesia.",
+    "footer.destinations":"Destinasi","footer.contacts":"Kontak","footer.copyright":"© 2026 SoulRoute. Seluruh hak cipta dilindungi.","footer.credits":"Foto via kontributor Wikimedia Commons."
+  }
+};
+
+function applyLang(lang){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(translations[lang] && translations[lang][key]!==undefined){
+      el.innerHTML = translations[lang][key];
+    }
+  });
+  document.getElementById('html-lang').setAttribute('lang', lang);
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+  localStorage.setItem('soulroute-lang', lang);
+}
+document.querySelectorAll('.lang-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>applyLang(btn.dataset.lang));
+});
+applyLang('en');
+
+/* ---------- Header scroll state ---------- */
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll', ()=>{
+  header.classList.toggle('scrolled', window.scrollY>30);
+  document.getElementById('backToTop').classList.toggle('show', window.scrollY>500);
+});
+
+/* ---------- Mobile nav ---------- */
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+hamburger.addEventListener('click', ()=> navMenu.classList.toggle('open'));
+document.querySelectorAll('.nav-menu a').forEach(a=> a.addEventListener('click', ()=> navMenu.classList.remove('open')));
+document.querySelector('.dropdown-toggle').addEventListener('click', (e)=>{
+  if(window.innerWidth<=760){ e.preventDefault(); e.currentTarget.parentElement.classList.toggle('open'); }
+});
+
+/* ---------- FAQ accordion ---------- */
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-question').addEventListener('click', ()=>{
+    const wasActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('active'));
+    if(!wasActive) item.classList.add('active');
+  });
+});
+
+/* ---------- Gallery scroll buttons ---------- */
+const track = document.getElementById('galleryTrack');
+document.getElementById('galNext').addEventListener('click', ()=> track.scrollBy({left:320, behavior:'smooth'}));
+document.getElementById('galPrev').addEventListener('click', ()=> track.scrollBy({left:-320, behavior:'smooth'}));
+
+/* ---------- Back to top ---------- */
+document.getElementById('backToTop').addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+/* ---------- Reveal on scroll ---------- */
+const revealEls = document.querySelectorAll('.reveal, .tour-card, .about-photo, .about-text');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:.15});
+revealEls.forEach(el=>{ el.classList.add('reveal'); io.observe(el); });
+</script>
+</body>
+</html>

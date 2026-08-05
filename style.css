@@ -136,6 +136,12 @@ p {
     font-size: 1.8rem;
 }
 
+.logo-img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
@@ -356,12 +362,25 @@ p {
     cursor: pointer;
 }
 
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
 .bar {
     width: 25px;
     height: 3px;
     background: #333;
     margin: 3px 0;
     transition: 0.3s;
+    transform-origin: center;
 }
 
 /* Hero Section */
@@ -1046,6 +1065,10 @@ p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    body.nav-open {
+        overflow: hidden;
+    }
+
     .gallery-container {
         display: block;
     }
@@ -1090,67 +1113,133 @@ p {
         left: -100%;
         top: 70px;
         flex-direction: column;
+        align-items: stretch;
         background-color: white;
         width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        padding: 2rem 0;
+        text-align: left;
+        transition: left 0.3s ease;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.1);
+        padding: 0;
+        z-index: 1001;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
     
     .nav-menu.active {
         left: 0;
     }
     
-    .nav-menu li {
-        margin: 1rem 0;
+    .nav-menu > li {
+        margin: 0;
+        width: 100%;
+    }
+
+    .nav-menu > li > .nav-link {
+        display: block;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .nav-menu > li > .nav-link::after {
+        display: none;
     }
 
     .nav-dropdown {
         position: static;
     }
 
+    .nav-dropdown > .nav-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .nav-dropdown .nav-link i {
+        font-size: 0.75rem;
+        margin-left: 0;
+    }
+
+    .nav-dropdown.open > .nav-link i {
+        transform: rotate(180deg);
+    }
+
     .dropdown-menu {
         position: static;
+        display: none;
         opacity: 1;
         visibility: visible;
         transform: none;
         box-shadow: none;
-        background: transparent;
+        background: #f8f9fa;
         padding: 0;
-        margin-top: 0.5rem;
-        margin-left: 1rem;
+        margin: 0;
+        min-width: 0;
+        border-radius: 0;
+    }
+
+    .nav-dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu li {
+        margin: 0;
     }
 
     .dropdown-menu a {
-        padding: 8px 0;
-        color: #bdc3c7;
-        font-size: 0.9rem;
+        display: block;
+        padding: 0.85rem 1.5rem 0.85rem 2rem;
+        color: #444;
+        font-size: 0.95rem;
+        border-bottom: 1px solid #eceff1;
     }
 
     .dropdown-menu a:hover {
-        padding-left: 10px;
-        background: transparent;
+        padding-left: 2rem;
+        background: #eef1f8;
+        color: #667eea;
     }
 
     .dropdown-parent {
-        justify-content: center;
+        justify-content: space-between;
+        font-weight: 600;
+        color: #333;
+        cursor: pointer;
+        padding-left: 1.5rem !important;
+    }
+
+    .dropdown-parent i {
+        display: inline-block;
+        font-size: 0.7rem;
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown-submenu.open .dropdown-parent i {
+        transform: rotate(90deg);
     }
 
     .submenu {
         position: static;
+        display: none;
         opacity: 1;
         visibility: visible;
         transform: none;
         box-shadow: none;
-        background: transparent;
+        background: #f1f3f6;
         min-width: 0;
-        padding: 0.25rem 0 0;
-        margin-left: 1rem;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
     }
 
-    .dropdown-parent i {
-        display: none;
+    .dropdown-submenu.open .submenu {
+        display: block;
+    }
+
+    .submenu a {
+        padding-left: 2.5rem !important;
+        font-size: 0.9rem;
     }
     
     h1 {
@@ -1230,6 +1319,23 @@ p {
 }
 
 @media (max-width: 480px) {
+    .logo-img {
+        height: 40px;
+    }
+
+    .nav-container {
+        padding: 0 15px;
+    }
+
+    .header-right {
+        gap: 0.75rem;
+    }
+
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
     .container {
         padding: 0 15px;
     }
